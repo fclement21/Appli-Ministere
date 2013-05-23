@@ -8,15 +8,17 @@
   <li class="menu <%= 'is-active' if current_page?(section) %>"><div class="menu-size"><%=link_to section.title, section %></div></li>
   <% end %>
 <li class="menu"><div class="menu-size" ><%= link_to 'New Section', new_section_path %> </div></li>
+<% if user_signed_in? %>
+<li class="menu "><div class="menu-size" ><a href="../dashboard">Admin</a></div></li>
+<% end %>
 </ul>
 
   <FORM ACTION = "" METHOD = "GET">
   <ul class="form">
      <% if user_signed_in? %>
-  Signed in as <%= current_user.email %>. Not you ?
-  <%=link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <%=link_to "Deconnexion", destroy_user_session_path, :method => :delete, :class => "btn btn-primary submit-input" %>
   <% else %>
-  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
+ <%= link_to "Sign in", new_user_session_path, :class => "btn btn-primary submit-input" %>
   <% end %>
 
 
