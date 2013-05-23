@@ -5,7 +5,7 @@
   <li class="title-ul">Sections</li>
 
    <% @allsections.each do |section| %>
-  <li class="menu" "<%= 'is-active' if current_page?(section) %>"><div class="menu-size"><%=link_to section.title, section %></div></li>
+  <li class="menu <%= 'is-active' if current_page?(section) %>"><div class="menu-size"><%=link_to section.title, section %></div></li>
   <% end %>
 <li class="menu"><div class="menu-size" ><%= link_to 'New Section', new_section_path %> </div></li>
 </ul>

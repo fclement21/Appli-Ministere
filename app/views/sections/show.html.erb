@@ -16,9 +16,9 @@ posimg = cycle('img-index-pos-right','img-index-pos-left', :name => 'positionimg
     <h2><%= article.title %></h2>
     <p><%=article.resume.html_safe %></p>
    <%= link_to 'Suite', [article.section, article] %>
-   <%= link_to 'Destroy', [article.section, article], :confirm => 'Etes vous sur ?', :method => :delete %>
 
-<hr class="<%= cycle('hr-index-left','hr-index-right') %>">
+
+<hr class="<%= cycle('hr-index-left','hr-index-right') %>"/>
 </div>
 </article>
   <%end %>
