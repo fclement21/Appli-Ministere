@@ -1,10 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Redmine</title>
+
+ <head>
+<title>Redmine</title>
+<!-- En-tête du document  -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Lien vers la font -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,400,600,700,800' rel='stylesheet' type='text/css'>
+
+
+  <!--  feuille CSS externe  -->
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "markitup/skins/markitup/style.css", "markitup/sets/default/style.css" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery.js", "markitup/jquery.markitup.js", "markitup/sets/default/set.js", "initialize_markitup.js"%>
   <%= csrf_meta_tags %>
+
+
+
+  <!-- CSS dans la page  -->
+  <style type="text/css" media="screen">
+  </style>
+
+  <!--fichier JavaScript  -->
+ <!-- <script type="text/javascript" src="votre-script.js"></script>-->
+
+  <!-- JavaScript dans la page  -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".markitup").markItUp(mySettings);
+    });
+  </script>
+
+ </head>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
 </head>
 <body>
 
