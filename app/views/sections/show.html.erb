@@ -3,17 +3,24 @@
   <div class="section-index">
 
 <h1>
-  <%= @section.tile %>
+  <%= @section.title %>
 </h1>
 
 <% @section.articles.each do | article | %>
+<article>
+  <% pos = cycle('txt-index-pos-left', 'txt-index-pos-right', :name => 'position')
+posimg = cycle('img-index-pos-right','img-index-pos-left', :name => 'positionimg')
+%>
+<div class="<%= pos %>">
+  <%= image_tag article.image_url.to_s, :class=> posimg %>
+    <h2><%= article.title %></h2>
+    <p><%=article.resume.html_safe %></p>
+   <%= link_to 'Suite', [article.section, article] %>
+   <%= link_to 'Destroy', [article.section, article], :confirm => 'Etes vous sur ?', :method => :delete %>
 
-<h2>  <%=article.title%></h2>
- <%= image_tag article.image_url.to_s %>
-  <p>
-    <%=article.resume %>
-  </p>
- <%= link_to 'Suite', @article_show %>
+<hr class="<%= cycle('hr-index-left','hr-index-right') %>">
+</div>
+</article>
   <%end %>
 
   <h2> Add an Article </h2>

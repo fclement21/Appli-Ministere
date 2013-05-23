@@ -1,9 +1,16 @@
 class ArticlesController < ApplicationController
+  before_filter 'setup_menu'
+
+  def setup_menu
+    @allsections = Section.all
+end
+
   def create
     @section = Section.find(params[:section_id])
     @article = @section.articles.create(params[:article])
     redirect_to section_path(@section)
   end
+
   def index
     @articles = Article.all
 
@@ -48,7 +55,8 @@ class ArticlesController < ApplicationController
   # PUT /articles/1
   # PUT /articles/1.json
   def update
-    @article = Article.find(params[:id])
+    @section = Section.find(params[:section_id])
+    @article = @section.articles.find(params[:id])
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
@@ -64,14 +72,12 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    @article = Article.find(params[:id])
+    @section = Section.find(params[:section_id])
+    @article = @section.articles.find(params[:id])
     @article.destroy
-
-    respond_to do |format|
-      format.html { redirect_to articles_url }
-      format.json { head :no_content }
+    redirect_to section_path(@section)
     end
   end
 
 
-end
+

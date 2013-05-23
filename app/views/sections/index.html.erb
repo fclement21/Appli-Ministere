@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Tile</th>
+    <th>Title</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +10,7 @@
 
 <% @sections.each do |section| %>
   <tr>
-    <td><%= section.tile %></td>
+    <td><%= section.title %></td>
     <td><%= link_to 'Show', section %></td>
     <td><%= link_to 'Edit', edit_section_path(section) %></td>
     <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
