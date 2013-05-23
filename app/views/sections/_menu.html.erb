@@ -12,10 +12,21 @@
 
   <FORM ACTION = "" METHOD = "GET">
   <ul class="form">
-  <li><INPUT TYPE = "text" NAME = "login" value="Login" class="connexion-input"></li>
+     <% if user_signed_in? %>
+  Signed in as <%= current_user.email %>. Not you ?
+  <%=link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+  <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+
+
+<%flash.each do |name,msg| %>
+<%= content_tag :div, msg, :id =>"flash_#{name}"%>
+<% end %>
+  <!--<li><INPUT TYPE = "text" NAME = "login" value="Login" class="connexion-input"></li>
   <li><INPUT TYPE = "password" NAME = "password" value="Password" class="connexion-input"></li>
    <li><input type="submit" class="btn btn-primary  submit-input" value="Connexion">
-  </li>
+  </li>-->
 </ul>
     </FORM>
 </nav>

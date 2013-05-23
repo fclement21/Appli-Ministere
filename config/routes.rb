@@ -1,4 +1,7 @@
 Redmine::Application.routes.draw do
+  devise_for :users
+  resources :dashboard
+  root to: "sections#index"
   resources :sections do
     resources :articles
   end
