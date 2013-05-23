@@ -1,0 +1,22 @@
+<aside>
+<nav class="vertical">
+<ul class="ul-menu">
+
+  <li class="title-ul">Sections</li>
+
+   <% @allsections.each do |section| %>
+  <li class="menu" "<%= 'is-active' if current_page?(section) %>"><div class="menu-size"><%=link_to section.tile, section %></div></li>
+  <% end %>
+
+</ul>
+
+  <FORM ACTION = "" METHOD = "GET">
+  <ul class="form">
+  <li><INPUT TYPE = "text" NAME = "login" value="Login" class="connexion-input"></li>
+  <li><INPUT TYPE = "password" NAME = "password" value="Password" class="connexion-input"></li>
+   <li><input type="submit" class="btn btn-primary  submit-input" value="Connexion">
+  </li>
+</ul>
+    </FORM>
+</nav>
+</aside>

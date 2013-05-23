@@ -1,0 +1,27 @@
+<%= render 'menu' %>
+<section>
+  <div class="section-index">
+  <h1>Gérer vos projets</h1>
+
+
+<% @articles.each do |article| %>
+<article>
+<% pos = cycle('txt-index-pos-left', 'txt-index-pos-right', :name => 'position')
+posimg = cycle('img-index-pos-right','img-index-pos-left', :name => 'positionimg')
+%>
+<div class="<%= pos %>">
+  <%= image_tag article.image_url.to_s, :class=> posimg %>
+    <h2><%= article.title %></h2>
+    <p><%=article.resume.html_safe %></p>
+   <%= link_to 'Suite', article %>
+   <%= link_to 'Edit', edit_article_path(article) %>
+   <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<hr class="<%= cycle('hr-index-left','hr-index-right') %>">
+</div>
+</article>
+
+<% end %>
+
+
+<%= link_to 'New Article', new_article_path %>

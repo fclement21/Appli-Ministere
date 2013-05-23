@@ -1,0 +1,23 @@
+<%= form_for([@section, @section.articles.build]) do |f| %>
+
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+    <div class="field">
+      <%= f.label :resume %><br>
+      <%= f.text_area :resume, :class => 'resume-area markitup' %><br>
+    </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, :class => 'content-area markitup'%>
+  </div>
+
+  <%= f.file_field :image %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
