@@ -9,6 +9,7 @@
 <% @section.articles.each do | article | %>
 
 <h2>  <%=article.title%></h2>
+ <%= image_tag article.image_url.to_s %>
   <p>
     <%=article.resume %>
   </p>
