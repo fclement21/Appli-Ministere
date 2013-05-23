@@ -1,5 +1,7 @@
 Redmine::Application.routes.draw do
-  resources :sections
+  resources :sections do
+    resources :articles
+  end
 
 
   # The priority is based upon order of creation:

@@ -1,10 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%= render 'menu' %>
+<section>
+  <div class="section-index">
 
-<p>
-  <b>Tile:</b>
+<h1>
   <%= @section.tile %>
-</p>
+</h1>
 
+<% @section.articles.each do | article | %>
 
+<h2>  <%=article.title%></h2>
+  <p>
+    <%=article.resume %>
+  </p>
+ <%= link_to 'Suite', @article_show %>
+  <%end %>
+
+  <h2> Add an Article </h2>
+
+ <%= render "articles/form"%>
+  <%= link_to 'New Section', new_section_path %>
 <%= link_to 'Edit', edit_section_path(@section) %> |
 <%= link_to 'Back', sections_path %>
+</div>
+</section>
