@@ -5,4 +5,6 @@ class ApplicationController < ActionController::Base
   def setup_menu
     @allsections = Section.all
 end
+
+
 end
