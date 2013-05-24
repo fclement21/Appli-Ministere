@@ -1,30 +1,48 @@
 <%=render 'sections/menu' %>
 
 <section>
-  <div class="section-article">
-  <h1 class="title-article">Welcome Dashboard</h1>
-<article class="article-size">
-<ul>
+  <div class="section-admin">
+  <h1>Welcome Dashboard</h1>
 
  <% @allsections.each do |section| %>
-<li><%=section.title%></li>
-<% @section.articles.each do | article | %>
-<article>
+  <article class="admin-article">
+ <div class="title-txt">
+   <div class="title-btn">
 
-<div class="">
-
-    <h2><%= article.title %></h2>
-    <p><%=article.resume.html_safe %></p>
-
-
-
-
+<h2><%=section.title%></h2>
+<div class="btn-action">
+  <a href="img">
+  </a>
 </div>
-</article>
-  <%end %>
-  <p>A completer</p>
-  <%end %>
-</article>
 </div>
+<p class="text-admin"> Lorem ipsum</p>
+</div>
+
+<table>
+  <colgroup>
+<col class="size-title">
+<col class="size-corps">
+<col class="size-action">
+</colgroup>
+   <thead> <!-- En-tête du tableau -->
+       <tr>
+           <th>Titre</th>
+           <th>Corps</th>
+           <th>Actions</th>
+       </tr>
+   </thead>
+   <tbody>
+    <% @section.articles.each do | article | %>
+    <tr>
+      <td class="titletab"><%=@article.title%></td>
+      <td class="corpstab"><%=@article.resume%></td>
+      <td class="actiontab">IMG IMG IMG</td>
+    </tr>
+      <%end %>
+    </tbody>
+</table>
+<p> IMG IMG IMG </p>
+</article>
+<%end %>
 </section>
 
