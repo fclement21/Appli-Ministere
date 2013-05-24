@@ -38,14 +38,14 @@
        </tr>
    </thead>
    <tbody>
-    <%# @section.articles.each do | article | %>
+    <%@section.articles.each do | article | %>
     <tr>
-      <td class="titletab"><!-- Ajouter le article.title--></td>
-      <td class="corpstab"><!-- Ajouter le article.resume--></td>
+      <td class="titletab"><%= @article.title %></td>
+      <td class="corpstab"><%= @article.resume %></td>
 
       <td class="actiontab"><%= link_to btn_eye,'',:class=> "espace-btn" %><%= link_to btn_edit,'',:class=> "espace-btn"%><%= link_to btn_remove, '',:class=> "espace-btn"%> </td>
     </tr>
-      <%#end %>
+      <%end %>
     </tbody>
 </table>
 <% btn_article = image_tag('btn-article.png') %>
