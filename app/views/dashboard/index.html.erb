@@ -4,8 +4,26 @@
   <div class="section-article">
   <h1 class="title-article">Welcome Dashboard</h1>
 <article class="article-size">
+<ul>
 
+ <% @allsections.each do |section| %>
+<li><%=section.title%></li>
+<% @section.articles.each do | article | %>
+<article>
+
+<div class="">
+
+    <h2><%= article.title %></h2>
+    <p><%=article.resume.html_safe %></p>
+
+
+
+
+</div>
+</article>
+  <%end %>
   <p>A completer</p>
+  <%end %>
 </article>
 </div>
 </section>
