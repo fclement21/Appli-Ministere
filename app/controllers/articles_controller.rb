@@ -1,9 +1,7 @@
 class ArticlesController < ApplicationController
-  before_filter 'setup_menu'
 
-  def setup_menu
-    @allsections = Section.all
-end
+
+
 
   def create
     @section = Section.find(params[:section_id])

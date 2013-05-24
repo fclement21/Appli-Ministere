@@ -8,7 +8,5 @@ class SectionsController < InheritedResources::Base
     end
   end
 
-  def setup_menu
-    @allsections = Section.all
-end
+
 end

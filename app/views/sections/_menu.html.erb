@@ -9,7 +9,7 @@
   <% end %>
 <li class="menu"><div class="menu-size" ><%= link_to 'New Section', new_section_path %> </div></li>
 <% if user_signed_in? %>
-<li class="menu "><div class="menu-size" ><a href="../dashboard">Admin</a></div></li>
+<li class="menu "><div class="menu-size" ><%= link_to 'Admin', :controller => 'dashboard', :action => 'index'%></div></li>
 <% end %>
 </ul>
 
