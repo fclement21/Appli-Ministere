@@ -2,6 +2,7 @@ Redmine::Application.routes.draw do
   devise_for :users
   resources :dashboard
   root to: "sections#show", :id => '1'
+
   resources :sections do
     resources :articles
   end

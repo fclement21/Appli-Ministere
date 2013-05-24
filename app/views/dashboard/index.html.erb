@@ -1,6 +1,9 @@
 <%=render 'sections/menu' %>
 
 <section>
+  <% btn_eye = image_tag('eye.png') %>
+      <% btn_edit = image_tag('pencil.png')%>
+      <% btn_remove = image_tag ('remove.png') %>
   <div class="section-admin">
   <h1>Welcome Dashboard</h1>
 
@@ -11,12 +14,15 @@
 
 <h2><%=section.title%></h2>
 <div class="btn-action">
+  <%= link_to btn_eye, section %>
+  <%= link_to btn_edit, edit_section_path(section) %>
+  <%= link_to t('.destroy', :default =>(btn_remove)),section_path(section),
+      :method => :delete,
+      :data => { :confirm => t('.confirm', :default => t("helpers.link.confirm", :default => 'Etes vous certains ?')) } %>
+<% btn_section = image_tag('btn-section.png') %>
+ <div> <%= link_to btn_section,:controller => 'sections', :action =>'new'%></div>
+</div>
 
- <div class="button-head btn btn-mini "> <%= link_to 'Nouvelle Section',:controller => 'sections', :action =>'new'%></div>
-</div>
-</div>
-<p class="text-admin"> Lorem ipsum</p>
-</div>
 
 <table>
   <colgroup>
@@ -36,16 +42,16 @@
     <tr>
       <td class="titletab"><!-- Ajouter le article.title--></td>
       <td class="corpstab"><!-- Ajouter le article.resume--></td>
-      <% btn_eye = image_tag('eye.png') %>
-      <% btn_edit = image_tag('pencil.png')%>
-      <% btn_remove = image_tag ('remove.png') %>
-      <td class="actiontab"><%= link_to btn_eye,'' %><%= link_to btn_edit,''%><%= link_to btn_remove, ''%> </td>
+
+      <td class="actiontab"><%= link_to btn_eye,'',:class=> "espace-btn" %><%= link_to btn_edit,'',:class=> "espace-btn"%><%= link_to btn_remove, '',:class=> "espace-btn"%> </td>
     </tr>
       <%#end %>
     </tbody>
 </table>
-<% btn_article = image_tag('plus.png') %>
-<%= link_to btn_article, :render => 'articles/form' %>
+<% btn_article = image_tag('btn-article.png') %>
+<div class="mv-btn-article">
+<%= link_to btn_article, '' %>
+</div>
 </article>
 <%end %>
 </section>
