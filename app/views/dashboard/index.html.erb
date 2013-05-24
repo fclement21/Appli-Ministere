@@ -11,8 +11,8 @@
 
 <h2><%=section.title%></h2>
 <div class="btn-action">
-  <a href="img">
-  </a>
+
+ <div class="button-head btn btn-mini "> <%= link_to 'Nouvelle Section',:controller => 'sections', :action =>'new'%></div>
 </div>
 </div>
 <p class="text-admin"> Lorem ipsum</p>
@@ -32,16 +32,20 @@
        </tr>
    </thead>
    <tbody>
-    <% @section.articles.each do | article | %>
+    <%# @section.articles.each do | article | %>
     <tr>
-      <td class="titletab"><%=@article.title%></td>
-      <td class="corpstab"><%=@article.resume%></td>
-      <td class="actiontab">IMG IMG IMG</td>
+      <td class="titletab"><!-- Ajouter le article.title--></td>
+      <td class="corpstab"><!-- Ajouter le article.resume--></td>
+      <% btn_eye = image_tag('eye.png') %>
+      <% btn_edit = image_tag('pencil.png')%>
+      <% btn_remove = image_tag ('remove.png') %>
+      <td class="actiontab"><%= link_to btn_eye,'' %><%= link_to btn_edit,''%><%= link_to btn_remove, ''%> </td>
     </tr>
-      <%end %>
+      <%#end %>
     </tbody>
 </table>
-<p> IMG IMG IMG </p>
+<% btn_article = image_tag('plus.png') %>
+<%= link_to btn_article, :render => 'articles/form' %>
 </article>
 <%end %>
 </section>
