@@ -6,7 +6,7 @@
       <% btn_remove = image_tag ('remove.png') %>
   <div class="section-admin">
   <h1>Welcome Dashboard</h1>
-
+<!-- Boucle pour afficher les sections -->
  <% @allsections.each do |section| %>
   <article class="admin-article">
  <div class="title-txt">
@@ -38,21 +38,22 @@
        </tr>
    </thead>
    <tbody>
-    <%@sections.articles.each do | article | %>
+    <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
+    <% section.articles.each do | article | %>
     <tr>
       <td class="titletab"><%= article.title %></td>
       <td class="corpstab"><%= article.resume %></td>
 
       <td class="actiontab"><%= link_to btn_eye,'',:class=> "espace-btn" %><%= link_to btn_edit,'',:class=> "espace-btn"%><%= link_to btn_remove, '',:class=> "espace-btn"%> </td>
     </tr>
-      <%end %>
+      <%end %>    <!-- Fin Boucle articles -->
     </tbody>
 </table>
 <% btn_article = image_tag('btn-article.png') %>
 <div class="mv-btn-article">
-<%= link_to btn_article, '' %>
+<%= link_to btn_article, 'new_section_article'%>
 </div>
 </article>
-<%end %>
+<%end %> <!-- Fin Boucle Section -->
 </section>
 
