@@ -1,5 +1,4 @@
 class SectionsController < InheritedResources::Base
-  before_filter :setup_menu
 
 
   def index

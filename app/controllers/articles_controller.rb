@@ -1,8 +1,5 @@
 class ArticlesController < ApplicationController
 
-
-
-
   def create
     @section = Section.find(params[:section_id])
     @article = @section.articles.create(params[:article])

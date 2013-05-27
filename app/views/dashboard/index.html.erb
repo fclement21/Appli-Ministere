@@ -38,10 +38,10 @@
        </tr>
    </thead>
    <tbody>
-    <%@section.articles.each do | article | %>
+    <%@sections.articles.each do | article | %>
     <tr>
-      <td class="titletab"><%= @article.title %></td>
-      <td class="corpstab"><%= @article.resume %></td>
+      <td class="titletab"><%= article.title %></td>
+      <td class="corpstab"><%= article.resume %></td>
 
       <td class="actiontab"><%= link_to btn_eye,'',:class=> "espace-btn" %><%= link_to btn_edit,'',:class=> "espace-btn"%><%= link_to btn_remove, '',:class=> "espace-btn"%> </td>
     </tr>
