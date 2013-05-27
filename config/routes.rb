@@ -1,6 +1,11 @@
 Redmine::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_names => { :sign_in => "login"}
+
   resources :dashboard
+devise_scope :user do
+  get "sign_in", :to =>"devise/sessions#new"
+end
+
   root to: "sections#show", :id => '1'
 
   resources :sections do

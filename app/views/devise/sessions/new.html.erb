@@ -1,13 +1,8 @@
-<ul class="form">
-<%= simple_form_for(resource_name, :as => resource, :url => user_session_path(resource_name)) do |f| %>
-  <div class="inputs">
+
+<%= simple_form_for(resource_name, :as => resource, :url => user_session_path()) do |f| %>
     <li ><%= f.email_field :email, :class => 'connexion-input', :value =>'Email' %></li>
     <li><%= f.password_field :password, :class => 'connexion-input', :value => 'Password' %></li>
-  </div>
 
-  <div class="actions">
-    <%= f.button :submit, "Connexion", :class => 'btn btn-primary submit-input' %>
-  </div>
+    <li><%= f.button :submit, "Connexion", :class => 'btn btn-primary submit-input' %></li>
+
 <% end %>
-</ul>
-

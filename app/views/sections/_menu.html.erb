@@ -12,10 +12,10 @@
 <% end %>
 </ul>
 
-  <FORM ACTION = "" METHOD = "GET">
+
   <ul class="form">
      <% if user_signed_in? %>
-  <%=link_to "Deconnexion", destroy_user_session_path, :method => :delete, :class => "btn btn-primary submit-input" %>
+  <%=link_to "Deconnexion", destroy_user_session_path, :method => :delete, :class => "btn btn-primary submit-deco" %>
   <% else %>
  <%= render :file =>"devise/sessions/new" %>
  <%#= link_to "Sign in", new_user_session_path, :class => "btn btn-primary submit-input" %>
@@ -25,11 +25,7 @@
 <%flash.each do |name,msg| %>
 <%= content_tag :div, msg, :id =>"flash_#{name}"%>
 <% end %>
-  <!--<li><INPUT TYPE = "text" NAME = "login" value="Login" class="connexion-input"></li>
-  <li><INPUT TYPE = "password" NAME = "password" value="Password" class="connexion-input"></li>
-   <li><input type="submit" class="btn btn-primary  submit-input" value="Connexion">
-  </li>-->
 </ul>
-    </FORM>
+
 </nav>
 </aside>

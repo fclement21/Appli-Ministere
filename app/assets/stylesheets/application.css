@@ -431,6 +431,11 @@ color: #0086c9;
   color: white;
 
 }
+.submit-deco{
+  color: white;
+  display: inline-block;
+  width: 132px;
+}
 input:focus{
 
 }
