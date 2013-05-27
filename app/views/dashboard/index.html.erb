@@ -5,55 +5,55 @@
       <% btn_edit = image_tag('pencil.png')%>
       <% btn_remove = image_tag ('remove.png') %>
   <div class="section-admin">
-  <h1>Welcome Dashboard</h1>
-<!-- Boucle pour afficher les sections -->
- <% @allsections.each do |section| %>
-  <article class="admin-article">
- <div class="title-txt">
-   <div class="title-btn">
+    <h1>Welcome Dashboard</h1>
+      <!-- Boucle pour afficher les sections -->
+      <% @allsections.each do |section| %>
+          <article class="admin-article">
+            <div class="title-txt">
+              <div class="title-btn">
 
-<h2><%=section.title%></h2>
-<div class="btn-action">
-  <%= link_to btn_eye, section %>
-  <%= link_to btn_edit, edit_section_path(section) %>
-  <%= link_to t('.destroy', :default =>(btn_remove)),section_path(section),
-      :method => :delete,
-      :data => { :confirm => t('.confirm', :default => t("helpers.link.confirm", :default => 'Etes vous certains ?')) } %>
-<% btn_section = image_tag('btn-section.png') %>
- <div> <%= link_to btn_section,:controller => 'sections', :action =>'new'%></div>
-</div>
+              <h2><%=section.title%></h2>
+                <div class="btn-action">
+                  <%= link_to btn_eye, section %>
+                  <%= link_to btn_edit, edit_section_path(section) %>
+                  <%= link_to t('.destroy', :default =>(btn_remove)),section_path(section),
+                                  :method => :delete,
+                                    :data => { :confirm => t('.confirm', :default => t("helpers.link.confirm", :default => 'Etes vous certains ?')) } %>
+                  <% btn_section = image_tag('btn-section.png') %>
+                  <div> <%= link_to btn_section,:controller => 'sections', :action =>'new'%></div>
+                </div>
 
 
-<table>
-  <colgroup>
-<col class="size-title">
-<col class="size-corps">
-<col class="size-action">
-</colgroup>
-   <thead> <!-- En-tête du tableau -->
-       <tr>
-           <th>Titre</th>
-           <th>Corps</th>
-           <th>Actions</th>
-       </tr>
-   </thead>
-   <tbody>
-    <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
-    <% section.articles.each do | article | %>
-    <tr>
-      <td class="titletab"><%= article.title %></td>
-      <td class="corpstab"><%= article.resume %></td>
+              <table>
+               <colgroup>
+                  <col class="size-title">
+                  <col class="size-corps">
+                  <col class="size-action">
+                </colgroup>
+              <thead> <!-- En-tête du tableau -->
+                <tr>
+                    <th>Titre</th>
+                    <th>Corps</th>
+                    <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+               <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
+              <% section.articles.each do | article | %>
+                <tr>
+                  <td class="titletab"><%= article.title %></td>
+                  <td class="corpstab"><%= article.resume.html_safe %></td>
 
-      <td class="actiontab"><%= link_to btn_eye,'',:class=> "espace-btn" %><%= link_to btn_edit,'',:class=> "espace-btn"%><%= link_to btn_remove, '',:class=> "espace-btn"%> </td>
-    </tr>
-      <%end %>    <!-- Fin Boucle articles -->
-    </tbody>
-</table>
-<% btn_article = image_tag('btn-article.png') %>
-<div class="mv-btn-article">
-<%= link_to btn_article, 'new_section_article'%>
-</div>
-</article>
-<%end %> <!-- Fin Boucle Section -->
+                  <td class="actiontab"><%= link_to btn_eye, [article.section, article] ,:class=> "espace-btn" %><%= link_to btn_edit,   :class=> "espace-btn"%><%= link_to btn_remove, '',:class=> "espace-btn"%> </td>
+                  </tr>
+              <%end %>    <!-- Fin Boucle articles -->
+              </tbody>
+              </table>
+          <% btn_article = image_tag('btn-article.png') %>
+          <div class="mv-btn-article">
+            <%= link_to btn_article, 'new_section_article'%>
+      </div>
+    </article>
+  <%end %> <!-- Fin Boucle Section -->
 </section>
 
