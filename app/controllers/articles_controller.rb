@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   def create
    @section = Section.find(params[:section_id])
    @article = @section.articles.create(params[:article])
-    redirect_to section_path(@section)
+   redirect_to :controller =>'dashboard', :action =>'index'
   end
 
   def index
@@ -57,9 +57,9 @@ class ArticlesController < ApplicationController
     @section = Section.find(params[:section_id])
     @article = @section.articles.find(params[:id])
 
-    respond_to do |format|
-      if @article.update_attributes(params[:article])
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+   respond_to do |format|
+     if @article.update_attributes(params[:article])
+        format.html { redirect_to :controller => 'dashboard', :action =>'index', notice: 'Article was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -74,7 +74,7 @@ class ArticlesController < ApplicationController
     @section = Section.find(params[:section_id])
     @article = @section.articles.find(params[:id])
     @article.destroy
-    redirect_to section_path(@section)
+    redirect_to :controller =>'dashboard', :action =>'index'
     end
   end
 

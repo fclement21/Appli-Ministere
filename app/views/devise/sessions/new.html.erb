@@ -1,7 +1,7 @@
 
 <%= simple_form_for(resource_name, :as => resource, :url => user_session_path()) do |f| %>
-    <li ><%= f.email_field :email, :class => 'connexion-input', :value =>'Email' %></li>
-    <li><%= f.password_field :password, :class => 'connexion-input', :value => 'Password' %></li>
+    <li ><%= f.email_field :email, :class => 'connexion-input', :placeholder => 'Email' %></li>
+    <li><%= f.password_field :password, :class => 'connexion-input', :placeholder => 'Password' %></li>
 
     <li><%= f.button :submit, "Connexion", :class => 'btn btn-primary submit-input' %></li>
 

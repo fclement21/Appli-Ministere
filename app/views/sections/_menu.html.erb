@@ -7,13 +7,14 @@
    <% @allsections.each do |section| %>
   <li class="menu <%= 'is-active' if current_page?(section) %>"><div class="menu-size"><%=link_to section.title, section %></div></li>
   <% end %>
-<% if user_signed_in? %>
-<li class="menu  "><div class="menu-size" ><%= link_to 'Admin', :controller => 'dashboard', :action => 'index'%></div></li>
-<% end %>
+
 </ul>
 
 
   <ul class="form">
+    <% if user_signed_in? %>
+<li class="menu menu-admin <%= 'is-active ' if current_page?(@dashboard)%> "><div class="menu-size" ><%= link_to 'Admin', :controller => 'dashboard', :action => 'index'%></div></li>
+<% end %>
      <% if user_signed_in? %>
   <%=link_to "Deconnexion", destroy_user_session_path, :method => :delete, :class => "btn btn-primary submit-deco" %>
   <% else %>
