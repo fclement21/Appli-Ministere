@@ -8,7 +8,8 @@ class ArticlesController < ApplicationController
     flash[:succes] = "Article cree"
   else
     flash[:avertissement] = "Tout les champs sont obligatoires"
-   end
+    redirect_to :controller => 'articles', :action => 'new'
+       end
   end
 
   def index

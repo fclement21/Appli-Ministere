@@ -1,12 +1,15 @@
 <%= render 'sections/menu' %>
 <section>
   <div class="section-article">
+     <%flash.each do |key,msg| %>
+<%= content_tag(:div, content_tag(:p,msg), :class =>"message #{key}") %>
+<% end %>
   <h1 class="title-article">Edit Section</h1>
 <article class="article-size">
 <%= render 'form' %>
 
 
-<%= link_to 'Back', sections_path %>
+<%= link_to 'Back', :controlle => 'dashboard', :action => 'index' %>
 </article>
 </div>
 </section>

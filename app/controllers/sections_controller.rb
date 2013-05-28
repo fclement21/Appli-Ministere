@@ -8,7 +8,7 @@ def destroy
    if @section.destroy
 
       else
-        flash[:avertissement] = "Erreur"
+        flash[:avertissement] = "Erreur lors de la suppression"
     end
 end
 
@@ -19,7 +19,8 @@ def create
    if @section.save
 
       else
-        flash[:avertissement] = "Erreur"
+        flash[:avertissement] = "Erreur lors de la creation"
+        redirect_to new_section_path
     end
 end
 
