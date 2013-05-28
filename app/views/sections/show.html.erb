@@ -14,7 +14,7 @@ posimg = cycle('img-index-pos-right','img-index-pos-left', :name => 'positionimg
 <div class="<%= pos %>">
   <%= image_tag article.image_url.to_s, :class=> posimg %>
     <h2><%= article.title %></h2>
-    <p><%=article.resume.html_safe %></p>
+    <p><%=article.resume %></p>
    <%= link_to 'Suite', [article.section, article] %>
 
 
@@ -23,11 +23,5 @@ posimg = cycle('img-index-pos-right','img-index-pos-left', :name => 'positionimg
 </article>
   <%end %>
 
-  <h2> Add an Article </h2>
-
- <%= render "articles/form"%>
-  <%= link_to 'New Section', new_section_path %>
-<%= link_to 'Edit', edit_section_path(@section) %> |
-<%= link_to 'Back', sections_path %>
-</div>
+ <%= link_to 'New article','' %></div>
 </section>

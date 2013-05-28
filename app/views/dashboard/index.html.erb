@@ -42,7 +42,7 @@
               <% section.articles.each do | article | %>
                 <tr>
                   <td class="titletab"><%= article.title %></td>
-                  <td class="corpstab"><%= article.resume.html_safe %></td>
+                  <td class="corpstab"><%= article.resume %></td>
 
                   <td class="actiontab"><%= link_to btn_eye, [article.section, article] ,:class=> "espace-btn" %><%= link_to btn_edit,   :class=> "espace-btn"%><%= link_to btn_remove, '',:class=> "espace-btn"%> </td>
                   </tr>
