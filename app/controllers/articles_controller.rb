@@ -4,6 +4,11 @@ class ArticlesController < ApplicationController
    @section = Section.find(params[:section_id])
    @article = @section.articles.create(params[:article])
    redirect_to :controller =>'dashboard', :action =>'index'
+   if @article.save
+    flash[:succes] = "Article cree"
+  else
+    flash[:avertissement] = "Tout les champs sont obligatoires"
+   end
   end
 
   def index
@@ -60,8 +65,11 @@ class ArticlesController < ApplicationController
    respond_to do |format|
      if @article.update_attributes(params[:article])
         format.html { redirect_to :controller => 'dashboard', :action =>'index', notice: 'Article was successfully updated.' }
+
         format.json { head :no_content }
+         flash[:succes] = "Article modifie"
       else
+        flash[:avertissement] = "Tout les champs sont obligatoires"
         format.html { render action: "edit" }
         format.json { render json: @article.errors, status: :unprocessable_entity }
       end
@@ -75,7 +83,15 @@ class ArticlesController < ApplicationController
     @article = @section.articles.find(params[:id])
     @article.destroy
     redirect_to :controller =>'dashboard', :action =>'index'
+    if @article.destroy
+       flash[:succes] = "Article supprime"
+      else
+        flash[:avertissement] = "Erreur"
     end
+
+    end
+
+
   end
 
 

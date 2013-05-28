@@ -7,6 +7,9 @@
       <% btn_edit = image_tag('pencil.png')%>
       <% btn_remove = image_tag ('remove.png') %>
   <div class="section-admin">
+    <%flash.each do |key,msg| %>
+<%= content_tag(:div, content_tag(:p,msg), :class =>"message #{key}") %>
+<% end %>
     <h1>Welcome Dashboard</h1>
      <div class="btn-section-size"> <%= link_to 'Nouvelle Section', new_section_path, :class => "btn btn-primary submit-deco"%></div>
       <!-- Boucle pour afficher les sections -->
