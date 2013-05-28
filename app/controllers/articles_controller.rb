@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
 
   def create
-    @section = Section.find(params[:section_id])
-    @article = @section.articles.create(params[:article])
+   @section = Section.find(params[:section_id])
+   @article = @section.articles.create(params[:article])
     redirect_to section_path(@section)
   end
 
@@ -29,7 +29,9 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   # GET /articles/new.json
   def new
-    @article = Article.new
+    @section = Section.find(params[:section_id])
+    @article = @section.articles.new
+  # @article = Article.new
 
     respond_to do |format|
       format.html # new.html.erb
