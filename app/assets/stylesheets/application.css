@@ -366,6 +366,7 @@ top: 0;
 margin-left: 0px;
 padding: 0 30px;
 
+
 }
 ul li .title-ul{
   margin-bottom: 10px;
@@ -373,7 +374,7 @@ ul li .title-ul{
 
 ul.ul-menu {
   border-bottom: 1px solid #aaaaaa;
-  margin-top:50px;
+  margin-top:10px;
 
 
 }
@@ -390,7 +391,9 @@ ul li a {
   text-decoration: none;
   display: block;
 }
-
+.vertical{
+  margin-top: 40px;
+}
 
 .menu a {
 font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -413,8 +416,8 @@ background-color: #f5f5f5;
 color: #0086c9;
 }
 .menu-admin{
-  margin-bottom: 20px;
-  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-top: -20px;
 }
 
 /*----------------------------------------------------Form---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -431,14 +434,14 @@ color: #0086c9;
 }
 .connexion-input{
   display: inline-block;
-  width: 163px;
+  width: 157px;
 
   color: #d9d6d6;
 }
 
 .submit-input{
   display: inline-block;
-  width: 163px;
+  width: 161px;
   color: white;
 
 }
