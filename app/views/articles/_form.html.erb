@@ -11,10 +11,12 @@
     </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content, :class => 'content-area markitup'%>
+    <%= f.text_area :content, :class => 'content-area markitup .markItUpEditor2'%>
   </div>
-  <%= f.label :Illustrations %><br /><br />
+  <div class="field">
+  <%= f.label :Illustrations %><br />
   <%= f.file_field :image %>
+</div>
   <div class="actions">
     <%= f.submit 'Creer un article', :class => "btn btn-primary submit-form"   %>
   </div>
@@ -30,9 +32,4 @@
 
 
 
-<!--
 
-  Update erreur
-  Redirection.
-  HTML.safe
-  -->

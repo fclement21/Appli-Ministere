@@ -31,8 +31,23 @@ color: #888888;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 font-weight: 200;
 font-style: normal;
-font-size: 1em;
-line-height: 1em;
+font-size: 1,5em;
+line-height: 1,5em;
+text-decoration: none;
+color: #888888;
+	padding:0px 0px 0px 0px;
+	width:930px;
+	height:120px;
+	clear:both;
+	line-height:18px;
+	overflow:auto;
+}
+.markItUpEditor2 {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+font-weight: 200;
+font-style: normal;
+font-size: 1,5em;
+line-height: 1,5em;
 text-decoration: none;
 color: #888888;
 	padding:0px 0px 0px 0px;
