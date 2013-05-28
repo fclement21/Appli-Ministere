@@ -414,9 +414,13 @@ color: #0086c9;
 */
 .form{
   margin-top: 30px;
+
 }
 .form-article{
   margin-left: 300px;
+}
+.form-new-edit-article{
+  margin-bottom: 30px;
 }
 .connexion-input{
   display: inline-block;
