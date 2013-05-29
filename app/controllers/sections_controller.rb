@@ -33,12 +33,7 @@ else
     flash[:avertissement] = "Titre obligatoire"
   end
   end
-
-
-
 end
-
-
 
 
 
