@@ -3,9 +3,10 @@ class ArticlesController < ApplicationController
   def create
    @section = Section.find(params[:section_id])
    @article = @section.articles.create(params[:article])
-   redirect_to :controller =>'dashboard', :action =>'index'
+
    if @article.save
     flash[:succes] = "Article cree"
+    redirect_to :controller =>'dashboard', :action =>'index'
   else
     flash[:avertissement] = "Tout les champs sont obligatoires"
     redirect_to :controller => 'articles', :action => 'new'

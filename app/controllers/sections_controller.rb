@@ -14,12 +14,12 @@ end
 
 def create
   super do |format|
-    format.html { redirect_to :controller =>'dashboard', :action =>'index'}
+    format.html { }
   end
    if @section.save
-
+redirect_to :controller =>'dashboard', :action =>'index'
       else
-        flash[:avertissement] = "Erreur lors de la creation"
+        flash[:avertissement] = "Veuillez remplir le champs titre."
         redirect_to new_section_path
     end
 end
