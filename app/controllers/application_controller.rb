@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter 'setup_menu'
 
   def setup_menu
-    @allsections = Section.all
+    @alldivisions = Division.all
   end
 
 

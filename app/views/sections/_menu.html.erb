@@ -2,12 +2,14 @@
 <nav class="vertical">
 <ul class="ul-menu">
 
-  <li class="title-ul">Sections</li>
+  <li class="title-ul">Divisions</li>
 
-   <% @allsections.each do |section| %>
+   <% @alldivisions.each do |division| %>
+   <li><%=division.title %></li>
+    <% division.sections.each do | section | %>
   <li class="menu <%= 'is-active' if current_page?(section) %>"><div class="menu-size"><%=link_to section.title, section %></div></li>
   <% end %>
-
+<%end%>
 </ul>
 
 

@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
 
   def create
+   @division = Division.find(params[:division_id])
    @section = Section.find(params[:section_id])
-   @article = @section.articles.create(params[:article])
+   @article = @division.@section.articles.create(params[:article])
 
    if @article.save
     flash[:succes] = "Article cree"
@@ -36,8 +37,9 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   # GET /articles/new.json
   def new
+    @division = Division.find(params[:division_id])
     @section = Section.find(params[:section_id])
-    @article = @section.articles.new
+    @article = @division.@section.articles.new
   # @article = Article.new
 
     respond_to do |format|
@@ -48,8 +50,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    @division = Division.find(params[:division_id])
     @section = Section.find(params[:section_id])
-    @article = @section.articles.find(params[:id])
+    @article = @division.@section.articles.find(params[:id])
   #  @article = Article.find(params[:id])
   end
 
@@ -61,8 +64,9 @@ class ArticlesController < ApplicationController
   # PUT /articles/1
   # PUT /articles/1.json
   def update
+    @division = Division.find(params[:division_id])
     @section = Section.find(params[:section_id])
-    @article = @section.articles.find(params[:id])
+    @article = @division.@section.articles.find(params[:id])
 
    respond_to do |format|
      if @article.update_attributes(params[:article])
@@ -81,8 +85,9 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
+    @division = Division.find(params[:division_id])
     @section = Section.find(params[:section_id])
-    @article = @section.articles.find(params[:id])
+    @article = @division.@section.articles.find(params[:id])
     @article.destroy
     redirect_to :controller =>'dashboard', :action =>'index'
     if @article.destroy
