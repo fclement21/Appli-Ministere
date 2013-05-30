@@ -65,4 +65,11 @@ end
 
   end
 
+  def show
+
+ @division = Division.find(params[:division_id])
+ @section = Section.find(params[:id])
+
+  end
+
 end
