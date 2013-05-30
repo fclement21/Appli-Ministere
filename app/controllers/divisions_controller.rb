@@ -10,15 +10,15 @@ class DivisionsController < InheritedResources::Base
     end
 end
 
-def create
+#def create
 
-   if @division.save
-redirect_to :controller =>'dashboard', :action =>'index'
-      else
-        flash[:avertissement] = "Veuillez remplir le champs titre."
-        redirect_to new_division_path
-    end
-end
+#   if @division.save
+#redirect_to :controller =>'dashboard', :action =>'index'
+#      else
+#        flash[:avertissement] = "Veuillez remplir le champs titre."
+#        redirect_to new_division_path
+ #   end
+#end
 
 def update
   super do |format|
@@ -31,14 +31,6 @@ else
   end
 end
 
-def new
- if Division.save
-redirect_to :controller =>'dashboard', :action =>'index'
-else
-  flash[:avertissement] = "Veuillez remplir le champs titre."
-
-end
- end
 
 
 

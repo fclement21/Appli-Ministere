@@ -316,7 +316,9 @@ width: 87%;
   color: black;
   margin: 1px solid red;
 }
-
+.pos-section-title{
+  margin-left: 100px;
+}
 
 .title-btn{
   margin-top: 0px;
