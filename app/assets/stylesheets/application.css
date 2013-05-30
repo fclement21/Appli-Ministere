@@ -42,6 +42,11 @@ h2 {
 padding-bottom: 25px;
 padding-top: 40px;
 }
+/*Style h3  */
+h3 {
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
 
 /*Image */
 .img-polaroid {
@@ -100,7 +105,16 @@ line-height: 1em;
 text-decoration: none;
 color: #222222;
 }
-
+/*Style h3 */
+h3{
+font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+font-weight: 600;
+font-style: normal;
+font-size: 1.5em;
+line-height: 1em;
+text-decoration: none;
+color: #222222;
+}
 /* Style p*/
 p {
 font-family: 'Open Sans', Helvetica, Arial, sans-serif;
