@@ -39,7 +39,7 @@
      <!-- <h3>Merci de bien vouloir creer une section </h3>
       <div class="btn-section-size"> <%#= link_to 'Nouvelle Section', new_division_section_path(division), :class => "btn btn-primary submit-deco"%></div>-->
       <%# else %>
-      <div class="btn-section-size"> <%= link_to 'Nouvelle Section', new_division_section_path(division), :class => "btn btn-primary submit-deco"%></div>
+      <div class="btn-section-size"> <%= link_to 'Nouvelle Section', new_division_section_path(division),:class => "btn btn-primary submit-deco"%></div>
                     <% division.sections.each do | section | %>
                         <div class ="pos-section-title">
                          <h3 ><%= section.title %></h3>

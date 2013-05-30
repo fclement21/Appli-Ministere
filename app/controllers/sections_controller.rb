@@ -64,8 +64,7 @@ end
     @section = @division.sections.find(params[:id])
 
   end
-
-  def show
+    def show
 
  @division = Division.find(params[:division_id])
  @section = Section.find(params[:id])

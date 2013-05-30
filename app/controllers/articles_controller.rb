@@ -26,8 +26,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
- @division = Division.find(params[:division_id])
- @section = Section.find(params[:section_id])
+
   @article = Article.find(params[:id])
 
     respond_to do |format|
