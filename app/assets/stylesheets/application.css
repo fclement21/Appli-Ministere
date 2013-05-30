@@ -204,10 +204,10 @@ section{
 }
 .section-index{
 position: relative;
-left:220px;
+left:120px;
 margin-right: 30px;
 margin-left: 30px;
-width: 80%;
+width: 87%;
 
 }
 .txt-index-pos-left{
@@ -307,8 +307,8 @@ p.none{
 /*===========================================================================================================================================================================admin====================================================*/
 .section-admin{
 position: relative;
-left:250px;
-width: 80%;
+left:142px;
+width: 87%;
 }
 .button-head{
   margin-bottom: 50px;

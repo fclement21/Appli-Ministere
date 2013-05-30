@@ -1,17 +1,19 @@
 <aside>
 <nav class="vertical">
-<ul class="ul-menu">
 
-  <li class="title-ul">Divisions</li>
+
+
 
    <% @alldivisions.each do |division| %>
-   <li class="menu menu-admin <%= 'is-active' if current_page?(division)%>"><div class="menu-size"><%=link_to division.title, division %></li>
+   <ul class="ul-menu">
+   <li class="title-ul" ><%=division.title  %></li>
     <% division.sections.each do | section | %>
-  <li class="menu <%#= 'is-active' if current_page?(section) %>"><div class="menu-size"><%=link_to section.title,'' %></div></li>
+  <li class="menu <%#= 'is-active' if current_page?(section) %>"><div class="menu-size"><%=link_to section.title, division_section_path(division,section) %></div></li>
   <% end %>
 
 </ul>
 <%end%>
+
 
   <ul class="form">
     <% if user_signed_in? %>

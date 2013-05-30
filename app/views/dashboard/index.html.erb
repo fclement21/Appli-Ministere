@@ -13,10 +13,10 @@
     <h1>Welcome Dashboard</h1>
      <div class="btn-section-size"> <%= link_to 'Nouvelle Division', new_division_path, :class => "btn btn-primary submit-deco"%></div>
 
-      <!-- Boucle pour afficher les sections -->
-      <%# if (Division.count == 0) %>
-      <!--<h3>Merci de bien vouloir creer une section </h3>-->
-      <%#else%>
+      <!-- Boucle pour afficher les division -->
+
+
+
       <% @alldivisions.each do |division| %>
 
           <article class="admin-article">
@@ -33,8 +33,13 @@
                                     :data => { :confirm => t('.confirm', :default => t("helpers.link.confirm", :default => 'Etes vous certains ?')) } %>
 
                 </div>
-                <div class="btn-section-size"> <%= link_to 'Nouvelle Section', new_division_section_path(division), :class => "btn btn-primary submit-deco"%></div>
-                <%#end %>
+
+                    <% #if (Section.count == 0) %>
+
+     <!-- <h3>Merci de bien vouloir creer une section </h3>
+      <div class="btn-section-size"> <%#= link_to 'Nouvelle Section', new_division_section_path(division), :class => "btn btn-primary submit-deco"%></div>-->
+      <%# else %>
+      <div class="btn-section-size"> <%= link_to 'Nouvelle Section', new_division_section_path(division), :class => "btn btn-primary submit-deco"%></div>
                  <% division.sections.each do | section | %>
                  <h3><%= section.title %></h3>
 
@@ -48,6 +53,7 @@
 
                 </div>
  <div class="btn-section-size"> <%= link_to 'Nouvelle Section', new_division_section_path(division), :class => "btn btn-primary submit-deco"%></div>
+ <%# end %>
               <table>
                <colgroup>
                   <col class="size-title">
@@ -63,12 +69,12 @@
               </thead>
               <tbody>
                <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
-               <% #if (division.sections.articles.count == 0) %>
+               <% if (section.articles.count == 0) %>
                 <tr>
                         <td colspan="3" class="article_vide">Merci de bien vouloir creer un article </td>
 
                     </tr>
-                    <%# else %>
+                    <% else %>
               <% section.articles.each do | article | %>
                   <tr>
                       <td class="titletab"><%= article.title %></td>
@@ -78,18 +84,19 @@
                     </tr>
 
 
-                  <%# end %>
-              <% end %>    <!-- Fin Boucle articles -->
+                  <% end %><!-- Fin Boucle articles -->
+              <% end %>
               </tbody>
               </table>
           <% btn_article = image_tag('btn-article.png') %>
           <div class="mv-btn-article">
              <%= link_to 'Nouvelle article', new_division_section_article_path(division,section), :class => "btn btn-primary submit-deco" %>
       </div>
-       <div class="btn-section-size"> <%#= link_to 'Nouvelle Section', new_division_section_path, :class => "btn btn-primary submit-deco"%></div>
+
       <%end %><!-- Fin Boucle Section -->
 
     </article>
   <%end %> <!-- Fin Boucle Division -->
+
 </section>
 
