@@ -1,5 +1,5 @@
 class SectionsController < InheritedResources::Base
-actions :show, :new, :create, :edit, :update
+
 
 def destroy
   super do |format|
@@ -25,14 +25,23 @@ redirect_to :controller =>'dashboard', :action =>'index'
 end
 
 def update
-  super do |format|
-    format.html { redirect_to :controller =>'dashboard', :action => 'index'}
-if @section.save
 
-else
-    flash[:avertissement] = "Titre obligatoire"
-  end
-  end
+    @division = Division.find(params[:division_id])
+    @section = @division.sections.find(params[:id])
+
+
+  respond_to do |format|
+     if @section.update_attributes(params[:section])
+        format.html { redirect_to :controller => 'dashboard', :action =>'index', notice: 'Article was successfully updated.' }
+
+        format.json { head :no_content }
+         flash[:succes] = "Section modifie"
+      else
+        flash[:avertissement] = "Tout les champs sont obligatoires"
+        format.html { render action: "edit" }
+        format.json { render json: @section.errors, status: :unprocessable_entity }
+      end
+    end
 end
 
 def new
@@ -50,5 +59,10 @@ else
 end
  end
 
+ def edit
+    @division = Division.find(params[:division_id])
+    @section = @division.sections.find(params[:id])
+
+  end
 
 end
