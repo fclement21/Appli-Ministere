@@ -74,7 +74,7 @@
                       <td class="titletab"><%= article.title %></td>
                       <td class="corpstab"><%= article.resume %></td>
 
-                      <td class="actiontab"><%#= link_to btn_eye, [article.section, article] ,:class=> "espace-btn" %><%#= link_to btn_edit, edit_division_section_article_path(division.id,section.id,article.id) ,:class=> "espace-btn"%><%#= link_to btn_remove,[article.section,article],:confirm => 'Etes vous sur ?',:method => :delete,:class=> "espace-btn"%> </td>
+                      <td class="actiontab"><%= link_to btn_eye, division_section_article_path(division,section,article) ,:class=> "espace-btn" %><%= link_to btn_edit, edit_division_section_article_path(division.id,section.id,article.id) ,:class=> "espace-btn"%><%= link_to btn_remove, division_section_article_path(division,section,article),:confirm => 'Etes vous sur ?',:method => :delete,:class=> "espace-btn"%> </td>
                     </tr>
 
 
