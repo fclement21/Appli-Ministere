@@ -10,7 +10,7 @@
     <%flash.each do |key,msg| %>
 <%= content_tag(:div, content_tag(:p,msg), :class =>"message #{key}") %>
 <% end %>
-    <h1>Welcome Dashboard</h1>
+    <h1>Page d'administration</h1>
      <div class="btn-section-size"> <%= link_to 'Nouvelle Division', new_division_path, :class => "btn btn-primary submit-deco"%></div>
 
       <!-- Boucle pour afficher les division -->
@@ -40,61 +40,61 @@
       <div class="btn-section-size"> <%#= link_to 'Nouvelle Section', new_division_section_path(division), :class => "btn btn-primary submit-deco"%></div>-->
       <%# else %>
       <div class="btn-section-size"> <%= link_to 'Nouvelle Section', new_division_section_path(division), :class => "btn btn-primary submit-deco"%></div>
-                 <% division.sections.each do | section | %>
-                 <div class ="pos-section-title">
-                 <h3 ><%= section.title %></h3>
+                    <% division.sections.each do | section | %>
+                        <div class ="pos-section-title">
+                         <h3 ><%= section.title %></h3>
 
 
-                 <div class="btn-action">
-                  <%= link_to btn_eye, division_section_path(division,section) %>
-                  <%= link_to btn_edit, edit_division_section_path(division,section) %>
-                  <%= link_to t('.destroy', :default =>(btn_remove)),division_section_path(division,section),
+                          <div class="btn-action">
+                            <%= link_to btn_eye, division_section_path(division,section) %>
+                            <%= link_to btn_edit, edit_division_section_path(division,section) %>
+                            <%= link_to t('.destroy', :default =>(btn_remove)),division_section_path(division,section),
                                   :method => :delete,
                                     :data => { :confirm => t('.confirm', :default => t("helpers.link.confirm", :default => 'Etes vous certains ?')) } %>
 
-                </div>
-                  </div>
+                          </div>
+                        </div>
  <%# end %>
-              <table>
-               <colgroup>
-                  <col class="size-title">
-                  <col class="size-corps">
-                  <col class="size-action">
-                </colgroup>
-              <thead> <!-- En-tête du tableau -->
-                <tr>
-                    <th>Titre</th>
-                    <th>Corps</th>
-                    <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-               <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
-               <% if (section.articles.count == 0) %>
-                <tr>
-                        <td colspan="3" class="article_vide">Merci de bien vouloir creer un article </td>
+                          <table>
+                            <colgroup>
+                              <col class="size-title">
+                              <col class="size-corps">
+                              <col class="size-action">
+                            </colgroup>
+                            <thead> <!-- En-tête du tableau -->
+                              <tr>
+                                  <th>Titre</th>
+                                  <th>Corps</th>
+                                  <th>Actions</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
+                              <% if (section.articles.count == 0) %>
+                                <tr>
+                                  <td colspan="3" class="article_vide">Merci de bien vouloir creer un article </td>
 
-                    </tr>
-                    <% else %>
-              <% section.articles.each do | article | %>
-                  <tr>
-                      <td class="titletab"><%= article.title %></td>
-                      <td class="corpstab"><%= article.resume %></td>
+                                </tr>
+                              <% else %>
+                                <% section.articles.each do | article | %>
+                                <tr>
+                                  <td class="titletab"><%= article.title %></td>
+                                  <td class="corpstab"><%= article.resume %></td>
 
-                      <td class="actiontab"><%= link_to btn_eye, division_section_article_path(division,section,article) ,:class=> "espace-btn" %><%= link_to btn_edit, edit_division_section_article_path(division.id,section.id,article.id) ,:class=> "espace-btn"%><%= link_to btn_remove, division_section_article_path(division,section,article),:confirm => 'Etes vous sur ?',:method => :delete,:class=> "espace-btn"%> </td>
-                    </tr>
+                                  <td class="actiontab"><%= link_to btn_eye, division_section_article_path(division,section,article) ,:class=> "espace-btn" %><%= link_to btn_edit, edit_division_section_article_path(division.id,section.id,article.id) ,:class=> "espace-btn"%><%= link_to btn_remove, division_section_article_path(division,section,article),:confirm => 'Etes vous sur ?',:method => :delete,:class=> "espace-btn"%> </td>
+                                </tr>
 
 
-                  <% end %><!-- Fin Boucle articles -->
-              <% end %>
-              </tbody>
-              </table>
-          <% btn_article = image_tag('btn-article.png') %>
-          <div class="mv-btn-article">
-             <%= link_to 'Nouvelle article', new_division_section_article_path(division,section), :class => "btn btn-primary submit-deco" %>
-      </div>
+                                <% end %><!-- Fin Boucle articles -->
+                              <% end %>
+                            </tbody>
+                          </table>
+                        <% btn_article = image_tag('btn-article.png') %>
+                        <div class="mv-btn-article">
+                          <%= link_to 'Nouvelle article', new_division_section_article_path(division,section), :class => "btn btn-primary submit-deco" %>
+                        </div>
 
-      <%end %><!-- Fin Boucle Section -->
+                <%end %><!-- Fin Boucle Section -->
 
     </article>
   <%end %> <!-- Fin Boucle Division -->

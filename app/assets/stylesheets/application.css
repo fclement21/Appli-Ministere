@@ -40,7 +40,7 @@ padding-bottom: 30px;
 /*Style h2 */
 h2 {
 padding-bottom: 25px;
-padding-top: 40px;
+padding-top: 25px;
 }
 /*Style h3  */
 h3 {
@@ -263,8 +263,8 @@ margin-top: 100px;
 }
 .section-article{
 position: relative;
-left:230px;
-width: 80%;
+left:115px;
+width: 88%;
 
 }
 
@@ -351,13 +351,15 @@ margin-left: 160px;
 
 .mv-btn-article{
   margin-left: 160px;
+  margin-bottom: 30px;
 }
 .espace-btn{
   margin-right: 4px;
 }
 .btn-section-size{
   width: 130px;
-  margin-left: -5px;
+  margin-left: 0px;
+
 }
 .article_vide{
 text-align: center;
