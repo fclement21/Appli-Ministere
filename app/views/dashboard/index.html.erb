@@ -16,7 +16,7 @@
       <!-- Boucle pour afficher les sections -->
       <%# if (Division.count == 0) %>
       <!--<h3>Merci de bien vouloir creer une section </h3>-->
-      <%else%>
+      <%#else%>
       <% @alldivisions.each do |division| %>
 
           <article class="admin-article">
@@ -69,27 +69,27 @@
 
                     </tr>
                     <%# else %>
-              <%# division.section.articles.each do | article | %>
+              <% section.articles.each do | article | %>
                   <tr>
-                      <td class="titletab"><%#= article.title %></td>
-                      <td class="corpstab"><%#= article.resume %></td>
+                      <td class="titletab"><%= article.title %></td>
+                      <td class="corpstab"><%= article.resume %></td>
 
                       <td class="actiontab"><%#= link_to btn_eye, [article.section, article] ,:class=> "espace-btn" %><%#= link_to btn_edit, edit_division_section_article_path(division.id,section.id,article.id) ,:class=> "espace-btn"%><%#= link_to btn_remove,[article.section,article],:confirm => 'Etes vous sur ?',:method => :delete,:class=> "espace-btn"%> </td>
                     </tr>
 
 
                   <%# end %>
-              <%# end %>    <!-- Fin Boucle articles -->
+              <% end %>    <!-- Fin Boucle articles -->
               </tbody>
               </table>
           <% btn_article = image_tag('btn-article.png') %>
           <div class="mv-btn-article">
-             <%#= link_to 'Nouvelle article', new_division_section_article_path(division,section), :class => "btn btn-primary submit-deco" %>
+             <%= link_to 'Nouvelle article', new_division_section_article_path(division,section), :class => "btn btn-primary submit-deco" %>
       </div>
        <div class="btn-section-size"> <%#= link_to 'Nouvelle Section', new_division_section_path, :class => "btn btn-primary submit-deco"%></div>
-      <%end %>
+      <%end %><!-- Fin Boucle Section -->
 
     </article>
-  <%end %> <!-- Fin Boucle Section -->
+  <%end %> <!-- Fin Boucle Division -->
 </section>
 

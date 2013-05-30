@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   def create
    @division = Division.find(params[:division_id])
    @section = Section.find(params[:section_id])
-   @article = @division.@section.articles.create(params[:article])
+   @article = @section.articles.create(params[:article])
 
    if @article.save
     flash[:succes] = "Article cree"
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   def new
     @division = Division.find(params[:division_id])
     @section = Section.find(params[:section_id])
-    @article = @division.@section.articles.new
+    @article = @section.articles.new
   # @article = Article.new
 
     respond_to do |format|
@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
   def edit
     @division = Division.find(params[:division_id])
     @section = Section.find(params[:section_id])
-    @article = @division.@section.articles.find(params[:id])
+    @article = @section.articles.find(params[:id])
   #  @article = Article.find(params[:id])
   end
 
@@ -66,7 +66,7 @@ class ArticlesController < ApplicationController
   def update
     @division = Division.find(params[:division_id])
     @section = Section.find(params[:section_id])
-    @article = @division.@section.articles.find(params[:id])
+    @article = @section.articles.find(params[:id])
 
    respond_to do |format|
      if @article.update_attributes(params[:article])
@@ -87,7 +87,7 @@ class ArticlesController < ApplicationController
   def destroy
     @division = Division.find(params[:division_id])
     @section = Section.find(params[:section_id])
-    @article = @division.@section.articles.find(params[:id])
+    @article = @section.articles.find(params[:id])
     @article.destroy
     redirect_to :controller =>'dashboard', :action =>'index'
     if @article.destroy
