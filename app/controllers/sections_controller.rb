@@ -13,9 +13,9 @@ def destroy
 end
 
 def create
-  super do |format|
-    format.html { }
-  end
+   @division= Division.find(params[:division_id])
+   @section = @division.sections.create(params[:section])
+
    if @section.save
 redirect_to :controller =>'dashboard', :action =>'index'
       else
@@ -35,6 +35,20 @@ else
   end
 end
 
+def new
+     @division = Division.find(params[:division_id])
+     @section = @division.sections.new
+   respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @section}
+    end
+    if @section.save
+redirect_to :controller =>'dashboard', :action =>'index'
+else
+  flash[:avertissement] = "Veuillez remplir le champs titre."
+
+end
+ end
 
 
 end

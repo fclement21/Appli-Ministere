@@ -1,18 +1,21 @@
 Redmine::Application.routes.draw do
-
+root to: "divisions#show", :id => '1'
+ resources :divisions do
+  resources :sections do
+    resources :articles
+    end
+  end
+resources :dashboard
 devise_for :users, :path_names => { :sign_in => "login"}
 
-  resources :dashboard
+
 devise_scope :user do
   get "sign_in", :to =>"devise/sessions#new"
 end
 
-  root to: "divisions#show", :id => '1'
-  resources :divisions do
-  resources :sections do
-    resources :articles
-  end
-end
+
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
