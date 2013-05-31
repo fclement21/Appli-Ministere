@@ -9,7 +9,7 @@ resources :dashboard
     end
   end
 
-devise_for :users, :path_names => { :sign_in => "login"}
+devise_for :users, :path_names => { :sign_in => "login"}, :controllers => { :registrations => 'registrations'}
 
 
 devise_scope :user do
