@@ -18,7 +18,9 @@
   <ul class="form">
     <% if user_signed_in? %>
 <li class="menu menu-admin <%= 'is-active ' if current_page?(:controller => 'dashboard', :action => 'index')%> "><div class="menu-size" ><%= link_to 'Admin', dashboard_index_path%></div></li>
-<li class="menu menu-admin" <div class="menu-size"><%#=link_to 'User', :controller => 'dashboard', :action => 'user_index' %></div></li>
+
+
+<li class="menu menu-admin <%= 'is-active ' if current_page?(:controller => 'users', :action => 'index')%> "><div class="menu-size" ><%= link_to 'Users', users_index_path%></div></li>
 <% end %>
      <% if user_signed_in? %>
   <%=link_to "Deconnexion", destroy_user_session_path, :method => :delete, :class => "btn btn-primary submit-deco" %>
