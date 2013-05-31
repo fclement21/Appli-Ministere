@@ -5,4 +5,6 @@ class Section < ActiveRecord::Base
   belongs_to :division
   has_many :articles, :dependent => :destroy
 
+extend  FriendlyId
+friendly_id :title
 end

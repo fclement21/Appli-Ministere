@@ -7,4 +7,9 @@ class Article < ActiveRecord::Base
       belongs_to :section
       mount_uploader :image, ImageUploader
 
+extend  FriendlyId
+friendly_id :title
+
+
+
 end
