@@ -12,12 +12,12 @@ end
 
 #def create
 
-#   if @division.save
+ # if @division.save
 #redirect_to :controller =>'dashboard', :action =>'index'
-#      else
-#        flash[:avertissement] = "Veuillez remplir le champs titre."
-#        redirect_to new_division_path
- #   end
+ #     else
+  #      flash[:avertissement] = "Veuillez remplir le champs titre."
+  #     redirect_to new_division_path
+  # end
 #end
 
 def update
