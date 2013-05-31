@@ -85,6 +85,7 @@ GEM
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
     formatador (0.2.4)
+    friendly_id (4.0.9)
     growl (1.0.3)
     guard (1.8.0)
       formatador (>= 0.2.4)
@@ -257,6 +258,7 @@ DEPENDENCIES
   draper
   factory_girl_rails (~> 3.0)
   font-awesome-sass-rails
+  friendly_id
   growl
   guard-rspec
   guard-spork
