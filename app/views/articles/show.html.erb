@@ -2,10 +2,11 @@
 <section>
   <div class="section-article">
   <h1 class="title-article"><%= @article.title %></h1>
+
 <article class="article-size">
-
+<%= link_to 'Back',root_path %>
   <p><%= @article.content.html_safe %></p>
-
+<%= link_to 'Back',root_path %>
 </article>
 </div>
 </section>
