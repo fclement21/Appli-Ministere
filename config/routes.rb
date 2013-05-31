@@ -1,5 +1,5 @@
 Redmine::Application.routes.draw do
-root to: "sections#show", :id => '29'
+root to: "sections#show", :id => '29', :division_id => '5'
  resources :divisions do
   resources :sections do
     resources :articles
