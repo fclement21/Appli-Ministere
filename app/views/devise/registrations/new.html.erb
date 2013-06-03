@@ -5,12 +5,12 @@
 <%= f.error_notification %>
 <ul class="form">
   <div class="inputs">
-   <li> <%#= f.label :email %>
-   <%= f.email_field :email, :required => true,:placeholder => 'Email', :class =>'email-input', :autofocus => true %></li>
-   <li> <%#= f.label :password %>
-    <%= f.password_field :password,:placeholder => 'Password', :class =>'password-input', :required => true %></li>
-    <li class="passwordconfirm"> <%#= f.label :password_confirmation %>
-   <%= f.password_field :password_confirmation,:placeholder => 'Password Confirmation', :class =>'passwordconfirm-input', :required => true %></li>
+   <li> <%= f.label :email %></li>
+   <li><%= f.email_field :email, :required => true, :class =>'email-input', :autofocus => true %></li>
+   <li> <%= f.label :password %></li>
+    <li><%= f.password_field :password, :class =>'password-input', :required => true %></li>
+    <li class="passwordconfirm"> <%= f.label :password_confirmation %></li>
+  <li> <%= f.password_field :password_confirmation, :class =>'passwordconfirm-input', :required => true %></li>
   </div>
   <li>
   <%= f.label :admin%>

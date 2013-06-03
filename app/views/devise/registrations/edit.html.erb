@@ -6,10 +6,10 @@
   <%= f.error_notification %>
 <ul class="form">
   <div class="inputs">
-   <li> <%= f.email_field :email, :required => true, :autofocus => true, :class => 'size-input-edit'%></li>
-    <li><%= f.password_field :password, :autocomplete => "off", :placeholder => "Password (Laissez blanc si vous voulez pas le changer)", :required => false,:class => 'size-input-edit' %></li>
-    <li><%= f.password_field :password_confirmation,:placeholder => "Confirmation password", :required => false,:class => 'size-input-edit' %></li>
-    <li><%= f.password_field :current_password, :placeholder => "Rentrer votre mot de passe actuel pour valider ", :required => true,:class => 'size-input-edit' %></li>
+   <li><%= f.label :email %></li><li><%= f.email_field :email, :required => true, :autofocus => true, :class => 'size-input-edit'%></li>
+    <li><%= f.label :New_password %></li><li><%= f.password_field :password, :autocomplete => "off", :hint => "Password (Laissez blanc si vous voulez pas le changer)", :required => false,:class => 'size-input-edit' %></li>
+    <li><%= f.label :Password_confirmation%></li><li><%= f.password_field :password_confirmation,:hint => "Confirmation password", :required => false,:class => 'size-input-edit' %></li>
+    <li><%= f.label :Actuel_Password %></li><li><%= f.password_field :current_password, :hint => "Rentrer votre mot de passe actuel pour valider ", :required => true,:class => 'size-input-edit' %></li>
   </div>
 
   <div class="actions">
