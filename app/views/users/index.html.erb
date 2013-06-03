@@ -1,0 +1,39 @@
+   <% btn_section = image_tag('btn-section.png') %>
+
+  <% btn_eye = image_tag('eye.png') %>
+      <% btn_edit = image_tag('pencil.png')%>
+      <% btn_remove = image_tag ('remove.png') %>
+  <div class="section-admin">
+<h1>Users</h1>
+
+ <div class="btn-section-size"> <%= link_to 'Nouvelle Utilisateur',new_user_registration_path() ,:class => "btn btn-primary submit-deco"%></div>
+
+                <table class="user-index">
+
+                            <colgroup>
+                              <col class="size-Email">
+                              <col class="size-action">
+                            </colgroup>
+                            <thead> <!-- En-tête du tableau -->
+                              <tr>
+                                  <th>Email</th>
+                                  <th>Actions</th>
+                              </tr>
+                            </thead>
+                            <% @users.each do |user| %>
+                            <tbody>
+                            <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
+                              <tr>
+                                  <td class="emailtab"><%= user.email %> </td>
+                                  <td class="actiontab"> <%#= link_to btn_edit, edit_user_registration_path(user) %>
+                  <%= link_to t('.destroy', :default =>(btn_remove)),user_registration_path(user),
+                                  :method => :delete,
+                                    :data => { :confirm => t('.confirm', :default => t("helpers.link.confirm", :default => 'Etes vous certains ?')) } %></td>
+                                </tr>
+
+
+                            </tbody>
+<% end %>
+                          </table>
+
+</div>
