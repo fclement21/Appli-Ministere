@@ -1,5 +1,6 @@
    <% btn_section = image_tag('btn-section.png') %>
-
+   <% btn_admin = image_tag('checkmark.png') %>
+   <% btn_noadmin = image_tag('close.png') %>
   <% btn_eye = image_tag('eye.png') %>
       <% btn_edit = image_tag('pencil.png')%>
       <% btn_remove = image_tag ('remove.png') %>
@@ -12,19 +13,26 @@
 
                             <colgroup>
                               <col class="size-Email">
+                              <col class="size-admin"
                               <col class="size-action">
                             </colgroup>
                             <thead> <!-- En-tête du tableau -->
                               <tr>
                                   <th>Email</th>
-                                  <th>Actions</th>
+                                  <th>Admin</th>
+                                  <th width = "70 px">Actions</th>
                               </tr>
                             </thead>
                             <% @users.each do |user| %>
                             <tbody>
                             <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
                               <tr>
-                                  <td class="emailtab"><%=link_to user.email, user_registration_path %> </td>
+                                  <td><%= user.email %> </td>
+                                  <td><%if user.admin? %>
+                                    <%= btn_admin %>
+                                    <% else %>
+                                    <%= btn_noadmin %>
+                                    <%end %>
                                   <td class="actiontab"> <%#= link_to btn_edit, edit_user_registration_path(user) %>
                   <%= link_to t('.destroy', :default =>(btn_remove)),user_registration_path,
                                   :method => :delete,
