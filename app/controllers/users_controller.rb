@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
+before_filter :admin_user
+
 
   def index
     @users = User.find(:all)
   end
+
 
 
   def create
@@ -68,7 +71,13 @@ class UsersController < ApplicationController
 
     end
 
+private
+def admin_user
+  redirect_to(root_path) unless current_user && current_user.admin?
 
+
+
+end
 
 
 
