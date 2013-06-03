@@ -1,10 +1,26 @@
 class RegistrationsController < Devise::RegistrationsController
- #before_filter :admin_user
+  before_filter :authenticate_user!, :redirect_unless_admin
+  prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
 
- #private
-#def admin_user
-#  redirect_to(root_path) unless current_user.admin?
-#end
+
+
+def create
+  @user = User.create
+    build_resource
+
+    if resource.save
+      redirect_to users_index_path
+    else
+      clean_up_passwords resource
+      respond_with resource
+    end
+  end
+
+
+def new
+  @user = User.new
+
+end
 
   def destroy
 
@@ -16,6 +32,13 @@ class RegistrationsController < Devise::RegistrationsController
 
 
     end
+    private
+def redirect_unless_admin
+  unless current_user.admin?
+    redirect_to root_path
+  end
+end
+
 end
 
 

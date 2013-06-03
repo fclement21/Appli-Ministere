@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 #before_filter :admin_user
 
 
+
   def index
     @users = User.find(:all)
   end
