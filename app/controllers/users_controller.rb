@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_filter :admin_user
+#before_filter :admin_user
 
 
   def index
@@ -60,21 +60,18 @@ before_filter :admin_user
   # DELETE /articles/1.json
   def destroy
 
-    @user = User.find(params[:id])
-    @user.destroy
+    User.find(params[:id]).destroy
+
     redirect_to :controller =>'users', :action =>'index'
-    if @user.destroy
        flash[:succes] = "User supprime"
-      else
-        flash[:avertissement] = "Erreur"
-    end
+
 
     end
 
-private
-def admin_user
-  redirect_to(root_path) unless current_user && current_user.admin?
-end
+#private
+#def admin_user
+#  redirect_to(root_path) unless current_user && current_user.admin?
+#end
 
 
 

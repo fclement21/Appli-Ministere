@@ -24,9 +24,9 @@
                             <tbody>
                             <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
                               <tr>
-                                  <td class="emailtab"><%= user.email %> </td>
+                                  <td class="emailtab"><%=link_to user.email, user_registration_path %> </td>
                                   <td class="actiontab"> <%#= link_to btn_edit, edit_user_registration_path(user) %>
-                  <%= link_to t('.destroy', :default =>(btn_remove)),edit_user_registration_path(user),
+                  <%= link_to t('.destroy', :default =>(btn_remove)),user_registration_path,
                                   :method => :delete,
                                     :data => { :confirm => t('.confirm', :default => t("helpers.link.confirm", :default => 'Etes vous certains ?')) } %></td>
                                 </tr>

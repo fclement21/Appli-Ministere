@@ -1,13 +1,16 @@
 <div class="section-index">
-<h2>Sign up</h2>
+<h2>Sign up Devise</h2>
 
-<%= simple_form_for(resource_name, :as => resource, :url => user_session_path()) do |f| %>  <%= f.error_notification %>
+<%= simple_form_for(resource_name, :as => resource, :url => user_registration_path()) do |f| %>
+<%= f.error_notification %>
 
   <div class="inputs">
     <%= f.input :email, :required => true, :autofocus => true %>
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
   </div>
+  <%= f.label :admin%>
+  <%= f.check_box (:admin) %>
 
   <div class="actions">
     <%= f.button :submit, "Sign up" %>
