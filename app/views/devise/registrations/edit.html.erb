@@ -1,22 +1,22 @@
 <div class="section-index">
-<h2>Edit</h2>
+<h2 class="title-edit-new">Edit</h2>
 
 <%= simple_form_for(resource, :as => resource_name, :url => user_registration_path, :html => { :method => :put }) do |f| %>
 
   <%= f.error_notification %>
-
+<ul class="form">
   <div class="inputs">
-    <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
-    <%= f.input :password_confirmation, :required => false %>
-    <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
+   <li> <%= f.email_field :email, :required => true, :autofocus => true, :class => 'size-input-edit'%></li>
+    <li><%= f.password_field :password, :autocomplete => "off", :placeholder => "Password (Laissez blanc si vous voulez pas le changer)", :required => false,:class => 'size-input-edit' %></li>
+    <li><%= f.password_field :password_confirmation,:placeholder => "Confirmation password", :required => false,:class => 'size-input-edit' %></li>
+    <li><%= f.password_field :current_password, :placeholder => "Rentrer votre mot de passe actuel pour valider ", :required => true,:class => 'size-input-edit' %></li>
   </div>
 
   <div class="actions">
-    <%= f.button :submit, "Update" %>
+    <li><%= f.button :submit, "Modifier", :class => 'btn btn-primary submit-input' %><li>
   </div>
 <% end %>
-
+</ul>
 </div>
 
 

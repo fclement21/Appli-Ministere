@@ -1,21 +1,25 @@
 <div class="section-index">
-<h2>Sign up Devise</h2>
+<h2 class="title-edit-new">Inscription</h2>
 
 <%= simple_form_for(resource_name, :as => resource, :url => user_registration_path()) do |f| %>
 <%= f.error_notification %>
-
+<ul class="form">
   <div class="inputs">
-    <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :password, :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
+   <li> <%#= f.label :email %>
+   <%= f.email_field :email, :required => true,:placeholder => 'Email', :class =>'email-input', :autofocus => true %></li>
+   <li> <%#= f.label :password %>
+    <%= f.password_field :password,:placeholder => 'Password', :class =>'password-input', :required => true %></li>
+    <li class="passwordconfirm"> <%#= f.label :password_confirmation %>
+   <%= f.password_field :password_confirmation,:placeholder => 'Password Confirmation', :class =>'passwordconfirm-input', :required => true %></li>
   </div>
+  <li>
   <%= f.label :admin%>
-  <%= f.check_box (:admin) %>
+  <%= f.check_box (:admin) %></li>
 
   <div class="actions">
-    <%= f.button :submit, "Sign up" %>
+   <li> <%= f.button :submit, "Inscription", :class => 'btn btn-primary submit-input'%></li>
   </div>
 <% end %>
 
-
+</ul>
 </div>
