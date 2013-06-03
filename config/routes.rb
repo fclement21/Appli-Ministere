@@ -11,7 +11,6 @@ resources :dashboard
 
 devise_for :users, :path_names => { :sign_in => "login"}, :controllers => { :registrations => 'registrations'}
 
-
 devise_scope :user do
   get "sign_in", :to =>"devise/sessions#new"
 end

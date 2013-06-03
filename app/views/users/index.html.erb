@@ -6,7 +6,7 @@
   <div class="section-admin">
 <h1>Users</h1>
 
- <div class="btn-section-size"> <%= link_to 'Nouvelle Utilisateur',new_user_registration_path() ,:class => "btn btn-primary submit-deco"%></div>
+ <div class="btn-section-size"> <%= link_to 'Nouvelle Utilisateur', new_user_registration_path ,:class => "btn btn-primary submit-deco"%></div>
 
                 <table class="user-index">
 
@@ -26,14 +26,14 @@
                               <tr>
                                   <td class="emailtab"><%= user.email %> </td>
                                   <td class="actiontab"> <%#= link_to btn_edit, edit_user_registration_path(user) %>
-                  <%= link_to t('.destroy', :default =>(btn_remove)),user_registration_path(user),
+                  <%= link_to t('.destroy', :default =>(btn_remove)),edit_user_registration_path(user),
                                   :method => :delete,
                                     :data => { :confirm => t('.confirm', :default => t("helpers.link.confirm", :default => 'Etes vous certains ?')) } %></td>
                                 </tr>
 
-
-                            </tbody>
 <% end %>
+                            </tbody>
+
                           </table>
 
 </div>

@@ -16,7 +16,7 @@ before_filter :admin_user
     redirect_to :controller =>'users', :action =>'index'
   else
     flash[:avertissement] = "Tout les champs sont obligatoires"
-    redirect_to user_registration_path
+    redirect_to new_user_registration_path
        end
   end
 
@@ -40,7 +40,7 @@ before_filter :admin_user
 
   def update
 
-    @user = users.find(params[:id])
+    @user = User.find(params[:id])
 
    respond_to do |format|
      if @user.update_attributes(params[:user])
@@ -60,7 +60,7 @@ before_filter :admin_user
   # DELETE /articles/1.json
   def destroy
 
-    @user = users.find(params[:id])
+    @user = User.find(params[:id])
     @user.destroy
     redirect_to :controller =>'users', :action =>'index'
     if @user.destroy
@@ -74,12 +74,7 @@ before_filter :admin_user
 private
 def admin_user
   redirect_to(root_path) unless current_user && current_user.admin?
-
-
-
 end
-
-
 
 
 
