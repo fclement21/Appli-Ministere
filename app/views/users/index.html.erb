@@ -34,7 +34,7 @@
                                     <%= btn_noadmin %>
                                     <%end %>
                                   <td class="actiontab"> <%#= link_to btn_edit, edit_user_registration_path(user) %>
-                  <%= link_to t('.destroy', :default =>(btn_remove)),user_registration_path,
+                  <%= link_to t('.destroy', :default =>(btn_remove)),user_registration_path(:id => user.id),
                                   :method => :delete,
                                     :data => { :confirm => t('.confirm', :default => t("helpers.link.confirm", :default => 'Etes vous certains ?')) } %></td>
                                 </tr>

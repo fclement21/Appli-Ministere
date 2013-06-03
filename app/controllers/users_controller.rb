@@ -60,7 +60,8 @@ class UsersController < ApplicationController
   # DELETE /articles/1.json
   def destroy
 
-    User.find(params[:id]).destroy
+       @user = User.find(params[:id])
+    @user.destroy
 
     redirect_to :controller =>'users', :action =>'index'
        flash[:succes] = "User supprime"
