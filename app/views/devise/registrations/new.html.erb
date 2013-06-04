@@ -5,19 +5,19 @@
 <%= f.error_notification %>
 <ul class="form">
   <div class="inputs">
-   <li> <%= f.label :email %></li>
-   <li><%= f.email_field :email, :required => true, :class =>'email-input', :autofocus => true %></li>
-   <li> <%= f.label :password %></li>
-    <li><%= f.password_field :password, :class =>'password-input', :required => true %></li>
-    <li class="passwordconfirm"> <%= f.label :password_confirmation %></li>
-  <li> <%= f.password_field :password_confirmation, :class =>'passwordconfirm-input', :required => true %></li>
+   <li> <%= f.label :email, :class => 'label-new-form' %>
+   <%= f.email_field :email, :required => true, :class =>'size-input-edit', :autofocus => true %></li>
+   <li> <%= f.label :password, :class => 'label-passnew-form' %>
+    <%= f.password_field :password, :class =>'size-input-edit', :required => true %></li>
+    <li class="passwordconfirm"> <%= f.label :password_confirmation, :class => 'label-conpassnew-form' %>
+  <%= f.password_field :password_confirmation, :class =>'size-input-edit', :required => true %></li>
   </div>
-  <li>
+  <li class="checkbox-admin">
   <%= f.label :admin%>
   <%= f.check_box (:admin) %></li>
 
   <div class="actions">
-   <li> <%= f.button :submit, "Inscription", :class => 'btn btn-primary submit-input'%></li>
+ <%= f.button :submit, "Inscription", :class => 'btn btn-primary submit-input submit-new '%>
   </div>
 <% end %>
 

@@ -371,8 +371,64 @@ text-align: center;
 color: #888;
   }
 
+.label-edit-form{
 
+  display: block;
+  width: 70px;
+  margin-left: 265px;
+}
+.label-pass-form{
 
+  display: block;
+  width: 145px;
+  margin-left: 265px;
+}
+.label-conpass-form{
+
+  display: block;
+  width: 210px;
+  margin-left: 265px;
+}
+.label-actual-form{
+
+  display: block;
+  width: 145px;
+  margin-left: 272px;
+}
+.submit-edit{
+  margin-left: 283px;
+  margin-top: 15px;
+}
+
+.label-new-form{
+
+  display: block;
+  width: 70px;
+  margin-left: 270px;
+}
+.label-passnew-form{
+
+  display: block;
+  width: 145px;
+  margin-left: 250px;
+}
+.label-conpassnew-form{
+
+  display: block;
+  width: 210px;
+  margin-left: 268px;
+}
+.checkbox-admin{
+  width: 100px;
+
+  margin-left: 270px;
+}
+.submit-new {
+
+margin-top: 12px;
+  margin-left: 282px;
+
+}
   /*===========================================================================================================================================================================user-admin =============================*/
 
 .user-index{
@@ -548,7 +604,7 @@ margin-left: 0px;
   width: 400px;
 }
 .title-edit-new{
-  margin-left: 400px;
+  margin-left: 275px;
 }
 /*----------------------------------------------------Bouton---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
