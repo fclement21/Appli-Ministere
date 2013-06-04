@@ -1,3 +1,17 @@
+<script type="text/javascript">
+$(document).ready(function(){
+
+$(".admin_select").click(function(){
+
+//$.getScript("/users/")+$(this).data("user-id")+"/toggle(:admin)");
+
+alert("/users/"+$(this).data("user-id")+"/toggle!(:admin)");
+});
+
+});
+
+</script>
+
    <% btn_section = image_tag('btn-section.png') %>
    <% btn_admin = image_tag('checkmark.png') %>
    <% btn_noadmin = image_tag('close.png') %>
@@ -28,8 +42,9 @@
                             <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
                               <tr>
                                   <td><%= user.email %> </td>
-                                  <%= simple_form_for(resource_name, :as => resource, :url => user_registration_path()) do |f| %>
-                                  <td><%= f.check_box (:admin), :id => "IsAdminSelect" %>
+                                  <%= simple_form_for(resource_name, :remote => true, :as => resource, :url => user_registration_path()) do |f| %>
+                                  <td><%= f.check_box :admin, :checked => user.admin?, :class => "admin_select",
+                                                       :data => { :user_id => user.id } %>
 
                                     <%#if user.admin? %>
                                     <%#= btn_admin %>

@@ -7,12 +7,18 @@ class RegistrationsController < Devise::RegistrationsController
 def create
   @user = User.create
     build_resource
-
+    respond_to do |format|
+      format.html {redirect_to :controller => 'users', :action => 'index'}
+      format.js
+    end
     if resource.save
       redirect_to users_index_path
+       flash[:succes] = "Utilisateur cree"
     else
       clean_up_passwords resource
       respond_with resource
+      flash[:avertissement] = "Veuillez remplir tout les champs."
+
     end
   end
 
