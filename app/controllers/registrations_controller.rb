@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :redirect_unless_admin, :except => [:edit]
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
 
 
