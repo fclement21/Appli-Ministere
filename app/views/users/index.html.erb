@@ -28,11 +28,15 @@
                             <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
                               <tr>
                                   <td><%= user.email %> </td>
-                                  <td><%if user.admin? %>
-                                    <%= btn_admin %>
-                                    <% else %>
-                                    <%= btn_noadmin %>
-                                    <%end %>
+                                  <%= simple_form_for(resource_name, :as => resource, :url => user_registration_path()) do |f| %>
+                                  <td><%= f.check_box (:admin), :id => "IsAdminSelect" %>
+
+                                    <%#if user.admin? %>
+                                    <%#= btn_admin %>
+                                    <%# else %>
+                                    <%#= btn_noadmin %>
+                                    <%#end %><% end %></td>
+
                                   <td class="actiontab"> <%#= link_to btn_edit, edit_user_registration_path(user) %>
                   <%= link_to t('.destroy', :default =>(btn_remove)),user_registration_path(:id => user.id),
                                   :method => :delete,
