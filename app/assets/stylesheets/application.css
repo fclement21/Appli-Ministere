@@ -248,6 +248,9 @@ margin-bottom: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
+.hr-menu{
+  width: 157px;
+}
 .h2-index{
 
   padding-top: -58px;
@@ -409,7 +412,7 @@ ul li .title-ul{
 }
 
 ul.ul-menu {
-  border-bottom: 1px solid #aaaaaa;
+
   margin-top:10px;
 
 

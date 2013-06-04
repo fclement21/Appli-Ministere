@@ -15,7 +15,7 @@ gem 'therubyracer'
 # App's gems
 gem 'inherited_resources'
 gem 'carrierwave'
-#gem 'rmagick'
+gem 'rmagick'
 gem 'simple_form', '~> 1.5.2'
 gem 'show_for'
 gem 'has_scope'
