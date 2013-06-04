@@ -226,15 +226,22 @@ width: 87%;
 .img-index-pos-right{
  position: absolute;
  left: 100%;
- top:100px;
+ top:70px;
  margin-left: 30px;
 padding-right: 20px;
+
 }
 .img-index-pos-left{
  position: absolute;
  right: 107%;
- top:100px;
+ top:70px;
+
 }
+.imgpos{
+  vertical-align: middle;
+  display: inline-block;
+}
+
 .hr-index-left{
 margin-left: 0px;
 width: 124%;
