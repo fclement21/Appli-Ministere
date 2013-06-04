@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
    respond_to do |format|
      if @user.update_attributes(params[:user])
-        format.html { redirect_to :controller => 'users', :action =>'index', notice: 'Utilisateur was successfully updated.' }
+        format.html { redirect_to :controller => 'dashboard', :action =>'index', notice: 'Utilisateur was successfully updated.' }
 
         format.json { head :no_content }
          flash[:succes] = "Utilisateur modifie"

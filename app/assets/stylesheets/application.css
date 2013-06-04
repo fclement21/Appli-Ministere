@@ -648,7 +648,9 @@ margin-right: 30px;
   width: 78px;
 }
 
-
+.size-action{
+  width:15%;
+}
 .size-corps{
   width: 70%;
 }
