@@ -226,7 +226,8 @@ width: 87%;
 .img-index-pos-right{
  position: absolute;
  left: 100%;
- top:70px;
+ top:30%;
+
  margin-left: 30px;
 padding-right: 20px;
 
@@ -234,7 +235,8 @@ padding-right: 20px;
 .img-index-pos-left{
  position: absolute;
  right: 107%;
- top:70px;
+ top:30%;
+
 
 
 }
