@@ -1,3 +1,4 @@
+require 'redcarpet'
 module ApplicationHelper
 
    def resource_name
@@ -14,6 +15,13 @@ module ApplicationHelper
   end
 
   def markdown(text)
-    Redcarpet.new(text).to_html.html_safe
+    if text
+      markdown = Redcarpet::Markdown.new(
+        Redcarpet::Render::HTML.new
+      )
+      markdown.render(text).html_safe
+    end
   end
+
+
 end
