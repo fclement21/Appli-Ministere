@@ -7,8 +7,9 @@
 </h1>
 
 <% @section.articles.each do | article | %>
-<article>
-  <% articlepos = cycle('articlepos-left', 'articlepos-right', :name =>'articleposition')
+<% articlepos = cycle('articlepos-left', 'articlepos-right', :name =>'articleposition') %>
+<article class="<%= articlepos %>">
+  <%
  pos = cycle('txt-index-pos-left', 'txt-index-pos-right', :name => 'position')
 posimg = cycle('img-index-pos-right','img-index-pos-left', :name => 'positionimg')
 %>

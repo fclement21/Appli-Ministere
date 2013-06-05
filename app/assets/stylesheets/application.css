@@ -209,17 +209,18 @@ margin-right: 30px;
 width: 87%;
 
 }
+.articlepos-right{
+  margin-left: 150px;
+}
 .txt-index-pos-left{
  position: relative;
-margin-left: 13px;
+
  width: 75%;
 
 }
 .txt-index-pos-right{
   position: relative;
-
-  margin-left:157px;
-  width: 73%
+  width: 85%
 }
 
 .img-index-pos-right{
