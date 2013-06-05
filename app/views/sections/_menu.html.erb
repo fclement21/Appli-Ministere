@@ -8,7 +8,7 @@
    <ul class="ul-menu">
    <li class="title-ul" ><%=division.title  %></li>
     <% division.sections.each do | section | %>
-  <li class="menu <%= 'is-active' if current_page?(division_section_path(division.id,section.id)) %>"><div class="menu-size"><%=link_to section.title, division_section_path(division,section) %></div></li>
+  <li class="menu <%= 'is-active' if current_page?(division_section_path(division,section)) %>"><div class="menu-size"><%=link_to section.title, division_section_path(division,section) %></div></li>
   <% end %>
 
 </ul>
@@ -24,7 +24,7 @@
 <li class="menu menu-admin <%= 'is-active ' if current_page?(:controller => 'users', :action => 'index')%> "><div class="menu-size" ><%= link_to 'Users', users_index_path%></div></li>
 <% end %>
 <%if user_signed_in?  %>
-<li class="menu menu-admin"><div class="menu-size"><%= link_to "Profil", edit_user_registration_path %></div></li>
+<li class="menu menu-admin <%= 'is-active' if current_page?(edit_user_registration_path) %>"><div class="menu-size"><%= link_to "Profil", edit_user_registration_path %></div></li>
   <%end %>
      <% if user_signed_in? %>
   <%=link_to "Deconnexion", destroy_user_session_path, :method => :delete, :class => "btn btn-primary submit-deco" %>
