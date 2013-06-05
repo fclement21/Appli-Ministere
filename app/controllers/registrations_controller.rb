@@ -3,11 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
 
 
-def toggle_admin
-  @user = User.find(params[:id])
-  @user.toggle!(:admin)
 
-end
 
 def create
   @user = User.create

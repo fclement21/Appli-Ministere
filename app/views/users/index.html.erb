@@ -1,27 +1,18 @@
 <script type="text/javascript">
-//$(document).ready(function(){
+
 
     $('body').on('click', '[update_admin_url]' , function(){
         $.ajax({
-            url: $(this).attr('update_admin_url'),
+            url: $(this).attr('update_admin_url')+ "?&authenticity_token=" + AUTH_TOKEN,
             type: 'PUT'
-
         });
+        //$.getScript('')
         console.log("toto");
     });
   //alert("/users/"+$(this).data("user-id")+"/toggle(:admin)");
-
-
-
-
-
-
-
+//$(document).ready(function(){
 //$(".admin_select").click(function(){
-
 //$.getScript("/users/")+$(this).data("user-id")+"/toggle(:admin)");
-
-
 //});
 
 //});
@@ -64,7 +55,7 @@
                                   <td><%= user.email %> </td>
                                   <%#= simple_form_for(resource_name, :remote => true, :as => resource, :url => user_registration_path()) do |f| %>
 
-                                   <td id="admin_user_status_<%=user.id %>"><%= check_box_tag :admin,1,user.admin?, update_admin_url: toggle_admin_devise_path(user) %>
+                                   <td id="admin_user_status_<%=user.id %>"><%= check_box_tag :admin,1,user.admin?, update_admin_url: toggle_admin_path(user) %>
 
                                   <!--<td><%#= f.check_box :admin, :checked => user.admin?, :class => "admin_select",
                                                        :data => { :user_id => user.id } %>-->

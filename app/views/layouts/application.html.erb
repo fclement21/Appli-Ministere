@@ -16,7 +16,7 @@
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "jquery.js", "markitup/jquery.markitup.js", "markitup/sets/markdown/set.js"%>
   <%= csrf_meta_tags %>
-
+  <%= javascript_tag "var AUTH_TOKEN = '#{form_authenticity_token}';" if protect_against_forgery?%>
 
 
   <!-- CSS dans la page  -->

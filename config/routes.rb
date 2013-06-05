@@ -1,15 +1,13 @@
 Redmine::Application.routes.draw do
 
   get "users/index"
+  put "users/:id/toggle_admin", :to => "users#toggle_admin", :as => "toggle_admin"
+
 
 root to: "sections#show", :id => '29', :division_id => '5'
 
-resources :devise do
 
- member do
-    put :toggle_admin
-  end
-end
+
 
 
 resources :dashboard

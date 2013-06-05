@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_filter :admin_user
+before_filter :admin_user, :except => :toggle_admin
 
 
 
@@ -15,6 +15,11 @@ def show
       format.json { render json: @user }
     end
   end
+
+def toggle_admin
+  @user = User.find(params[:id])
+  @user.toggle!(:admin)
+end
 
   def create
  @users = User.create
@@ -87,10 +92,6 @@ def admin_user
 end
 
 
-def toggle_admin
-  @user = User.find(params[:id])
-  @user.toggle!(:admin)
 
-end
 
 end
