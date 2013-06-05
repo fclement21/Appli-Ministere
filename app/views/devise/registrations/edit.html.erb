@@ -10,10 +10,11 @@
 <ul class="form">
   <div class="inputs">
    <li><%= f.label :email, :class => 'label-edit-form' %><%= f.email_field :email, :required => true, :autofocus => true, :class => 'size-input-edit'%></li>
-    <li><%= f.label :New_password, :class => 'label-pass-form' %><%= f.password_field :password, :autocomplete => "off", :hint => "Password (Laissez blanc si vous voulez pas le changer)", :required => false,:class => 'size-input-edit' %></li>
-    <li><%= f.label :Password_confirmation, :class => 'label-conpass-form'%><%= f.password_field :password_confirmation,:hint => "Confirmation password", :required => false,:class => 'size-input-edit' %></li>
-
     <li><%= f.label :Actuel_Password, :class => 'label-actual-form' %><%= f.password_field :current_password, :hint => "Rentrer votre mot de passe actuel pour valider ", :required => true,:class => 'size-input-edit' %></li>
+    <li><%= f.label :New_password, :class => 'label-pass-form' %><%= f.password_field :password, :autocomplete => "off", :hint => "Password (Laissez blanc si vous voulez pas le changer)", :required => false,:class => 'size-input-edit' %></li>
+    <li><%= f.label :New_password_confirmation, :class => 'label-conpass-form'%><%= f.password_field :password_confirmation,:hint => "Confirmation password", :required => false,:class => 'size-input-edit' %></li>
+
+
   </div>
 
   <div class="actions">
