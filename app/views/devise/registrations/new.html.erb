@@ -1,6 +1,9 @@
 <div class="section-index">
 <h2 class="title-edit-new">Inscription</h2>
 
+ <%flash.each do |key,msg| %>
+<%= content_tag(:div, content_tag(:p,msg), :class =>"message #{key}") %>
+<% end %>
 <%= simple_form_for(resource_name, :as => resource, :url => user_registration_path()) do |f| %>
 <%= f.error_notification %>
 <ul class="form">

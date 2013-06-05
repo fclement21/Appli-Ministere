@@ -1,14 +1,30 @@
 <script type="text/javascript">
-$(document).ready(function(){
+//$(document).ready(function(){
 
-$(".admin_select").click(function(){
+    $('body').on('click', '[update_admin_url]' , function(){
+        $.ajax({
+            url: $(this).attr('update_admin_url'),
+            type: 'PUT'
+
+        });
+        console.log("toto");
+    });
+  //alert("/users/"+$(this).data("user-id")+"/toggle(:admin)");
+
+
+
+
+
+
+
+//$(".admin_select").click(function(){
 
 //$.getScript("/users/")+$(this).data("user-id")+"/toggle(:admin)");
 
-alert("/users/"+$(this).data("user-id")+"/toggle(:admin)");
-});
 
-});
+//});
+
+//});
 
 </script>
 
@@ -18,7 +34,11 @@ alert("/users/"+$(this).data("user-id")+"/toggle(:admin)");
   <% btn_eye = image_tag('eye.png') %>
       <% btn_edit = image_tag('pencil.png')%>
       <% btn_remove = image_tag ('remove.png') %>
+
   <div class="section-admin">
+      <%flash.each do |key,msg| %>
+<%= content_tag(:div, content_tag(:p,msg), :class =>"message #{key}") %>
+<% end %>
 <h1>Users</h1>
 
  <div class="btn-section-size"> <%= link_to 'Nouvelle Utilisateur', new_user_registration_path ,:class => "btn btn-primary submit-deco"%></div>
@@ -42,15 +62,18 @@ alert("/users/"+$(this).data("user-id")+"/toggle(:admin)");
                             <!-- Boucle pour afficher les articles dans le tableau de chaque section -->
                               <tr>
                                   <td><%= user.email %> </td>
-                                  <%= simple_form_for(resource_name, :remote => true, :as => resource, :url => user_registration_path()) do |f| %>
-                                  <td><%= f.check_box :admin, :checked => user.admin?, :class => "admin_select",
-                                                       :data => { :user_id => user.id } %>
+                                  <%#= simple_form_for(resource_name, :remote => true, :as => resource, :url => user_registration_path()) do |f| %>
+
+                                   <td id="admin_user_status_<%=user.id %>"><%= check_box_tag :admin,1,user.admin?, update_admin_url: toggle_admin_devise_path(user) %>
+
+                                  <!--<td><%#= f.check_box :admin, :checked => user.admin?, :class => "admin_select",
+                                                       :data => { :user_id => user.id } %>-->
 
                                     <%#if user.admin? %>
                                     <%#= btn_admin %>
                                     <%# else %>
                                     <%#= btn_noadmin %>
-                                    <%#end %><% end %></td>
+                                    <%#end %><%# end %></td>
 
                                   <td class="actiontab"> <%#= link_to btn_edit, edit_user_registration_path(user) %>
                   <%= link_to t('.destroy', :default =>(btn_remove)),user_registration_path(:id => user.id),

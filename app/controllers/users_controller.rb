@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-#before_filter :admin_user
+before_filter :admin_user
 
 
 
@@ -7,7 +7,14 @@ class UsersController < ApplicationController
     @users = User.find(:all)
   end
 
+def show
+    @user = User.find(params[:id])
 
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @user }
+    end
+  end
 
   def create
  @users = User.create
@@ -37,6 +44,10 @@ class UsersController < ApplicationController
  @user = User.find(params[:id])
   end
 
+  def show
+    @user = User.find(params[:id])
+
+  end
 
 
   def update
@@ -61,7 +72,7 @@ class UsersController < ApplicationController
   # DELETE /articles/1.json
   def destroy
 
-       @user = User.find(params[:id])
+    @user = User.find(params[:id])
     @user.destroy
 
     redirect_to :controller =>'users', :action =>'index'
@@ -70,11 +81,16 @@ class UsersController < ApplicationController
 
     end
 
-#private
-#def admin_user
-#  redirect_to(root_path) unless current_user && current_user.admin?
-#end
+private
+def admin_user
+  redirect_to(root_path) unless current_user && current_user.admin?
+end
 
 
+def toggle_admin
+  @user = User.find(params[:id])
+  @user.toggle!(:admin)
+
+end
 
 end

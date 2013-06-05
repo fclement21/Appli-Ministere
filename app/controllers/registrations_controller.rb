@@ -3,21 +3,23 @@ class RegistrationsController < Devise::RegistrationsController
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
 
 
+def toggle_admin
+  @user = User.find(params[:id])
+  @user.toggle!(:admin)
+
+end
 
 def create
   @user = User.create
     build_resource
-    respond_to do |format|
-      format.html {redirect_to :controller => 'users', :action => 'index'}
-      format.js
-    end
+
     if resource.save
       redirect_to users_index_path
        flash[:succes] = "Utilisateur cree"
     else
       clean_up_passwords resource
       respond_with resource
-      flash[:avertissement] = "Veuillez remplir tout les champs."
+      flash[:avertissement] = "Erreur : Email deja utilise ou Password < 6 caracteres "
 
     end
   end
