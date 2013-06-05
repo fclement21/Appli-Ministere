@@ -39,7 +39,7 @@
      <!-- <h3>Merci de bien vouloir creer une section </h3>
       <div class="btn-section-size"> <%#= link_to 'Nouvelle Section', new_division_section_path(division), :class => "btn btn-primary submit-deco"%></div>-->
       <%# else %>
-      <div class="btn-section-size"> <%= link_to 'Nouvelle Section', new_division_section_path(division),:class => "btn btn-primary submit-deco"%></div>
+      <div class="btn-section-size"> <%= link_to 'Nouvelle Section', new_division_section_path(division),:class => "btn  submit-deco"%></div>
                     <% division.sections.each do | section | %>
                         <div class ="pos-section-title">
                          <h3 ><%= section.title %></h3>
@@ -91,7 +91,7 @@
                           </table>
                         <% btn_article = image_tag('btn-article.png') %>
                         <div class="mv-btn-article">
-                          <%= link_to 'Nouvelle article', new_division_section_article_path(division,section), :class => "btn btn-primary submit-deco" %>
+                          <%= link_to 'Nouvelle article', new_division_section_article_path(division,section), :class => "btn submit-deco" %>
                         </div>
 
                 <%end %><!-- Fin Boucle Section -->
