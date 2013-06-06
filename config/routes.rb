@@ -3,6 +3,8 @@ Redmine::Application.routes.draw do
   get "users/index"
   put "users/:id/toggle_admin", :to => "users#toggle_admin", :as => "toggle_admin"
 
+#Routes pour le form
+
 match 'contact' => 'contact#new', :as => 'contact', :via => :get
 match 'contact' => 'contact#create', :as => 'contact', :via => :post
 

@@ -58,6 +58,7 @@ module Redmine
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    # Configuration du mail
     config.action_mailer.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,

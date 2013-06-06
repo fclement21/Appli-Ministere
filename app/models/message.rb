@@ -1,5 +1,5 @@
 class Message
-
+# Model du message
   include ActiveModel::Validations
   include ActiveModel::Conversion
   extend ActiveModel::Naming
