@@ -4,9 +4,9 @@ class Message
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :name, :email, :subject, :body
-
-  validates :name, :email, :subject, :body, :presence => true
+  attr_accessor :nom_environnement, :email, :subject, :body, :bdd
+  BDD_TYPES = ["Mysql", "PostgreSQL"]
+  validates :nom_environnement, :email, :bdd, :body, :presence => true
   validates :email, :format => { :with => %r{.+@.+\..+} }, :allow_blank => true
 
   def initialize(attributes = {})
