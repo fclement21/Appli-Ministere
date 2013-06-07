@@ -1,6 +1,5 @@
 class ContactController < ApplicationController
 
-
 # Creating an issue
 def new
 @issue = Issue.new
