@@ -1,27 +1,24 @@
 <!-- Ce que l'utilisateur rempli et envoi -->
 <div class="section-index">
-<%= form_for @message, :url => contact_path do |form| %>
+<%= form_for @issue, :url => contact_path do |form| %>
   <fieldset class="fields">
     <div class="field">
-      <%= form.label :nom_environnement %>
-      <%= form.text_field :nom_environnement %>
+      <%= form.label :subject %>
+      <%= form.text_field :subject %>
+    </div>
+<div class="field">
+<%=form.label :project_id %>
+<%= form.text_field :project_id %>
+</div>
+    <div class="field">
+      <%= form.label :priority_id %>
+      <%= form.text_field :priority_id %>
     </div>
 
-    <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email %>
-    </div>
-    <div class="field">
-      <%= form.label :Type_bdd %>
-      <%= form.select(:bdd,  Message::BDD_TYPES) %>
-
-
-
-    </div>
 
     <div class="field">
-      <%= form.label :body %>
-      <%= form.text_area :body, :placeholder => 'Ecrire le corps de votre message ainsi que un ou des emails supplémentaires' %>
+      <%= form.label :description %>
+      <%= form.text_area :description, :placeholder => 'Ecrire le corps de votre message ainsi que un ou des emails supplémentaires' %>
     </div>
   </fieldset>
 
