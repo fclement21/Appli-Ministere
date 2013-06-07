@@ -2,6 +2,7 @@ class ContactController < ApplicationController
 # Creating an issue
 def new
 @issue = Issue.new
+
 end
   #@issue = Issue.new(
   #          :subject => 'Php dano creation',
@@ -17,7 +18,8 @@ end
 
 def create
  @issue = Issue.create(params[:issue])
-
+  @issue.description = "Texte controlleur" + params[:issue][:description]
+ #@issue.description = "Ajout d'un texte controlleur"+ 'description'
    if @issue.save
     flash[:succes] = "Ticket cree"
     redirect_to root_path

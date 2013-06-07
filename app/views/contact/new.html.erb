@@ -1,14 +1,17 @@
 <!-- Ce que l'utilisateur rempli et envoi -->
 <div class="section-index">
+  <h2 class="title-edit-new">Formulaire Php</h2>
 <%= form_for @issue, :url => contact_path do |form| %>
   <fieldset class="fields">
     <div class="field">
-      <%#= form.label :subject %>
+
       <%= form.hidden_field :subject, :value => "Php Creation" %>
-      <%#= form.text_field :subject %>
+
     </div>
+    <div class="inputs">
 <div class="field">
    <%= form.hidden_field :project_id, :value => "1" %>
+   </div>
 <%#=form.label :project_id %>
 <%#= form.text_field :project_id %>
 </div>
@@ -26,7 +29,7 @@
   </fieldset>
 
   <fieldset class="actions">
-    <%= form.submit "Send" %>
+    <%= form.submit "Envoyé", :class => 'btn btn-primary submit-input submit-new ' %>
   </fieldset>
 <% end %>
 </div>
