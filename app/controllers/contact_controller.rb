@@ -1,8 +1,10 @@
 class ContactController < ApplicationController
 # Creating an issue
+
 def new
 @issue = Issue.new
 
+ #@issue.description = "Ajout d'un texte controlleur"+ 'description'
 end
   #@issue = Issue.new(
   #          :subject => 'Php dano creation',
@@ -17,8 +19,14 @@ end
 #end
 
 def create
- @issue = Issue.create(params[:issue])
-  @issue.description = "Texte controlleur" + params[:issue][:description]
+  #stock le issue description.
+  original_description = params[:issue] && params[:issue][:description]
+  # le modifie
+  params[:issue][:description] = "The user write #{original_description}"
+ @issue = Issue.new(params[:issue])
+
+
+  #@issue.description = "Texte controlleur" + params[:issue][:description]
  #@issue.description = "Ajout d'un texte controlleur"+ 'description'
    if @issue.save
     flash[:succes] = "Ticket cree"
