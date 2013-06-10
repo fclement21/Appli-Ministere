@@ -8,6 +8,8 @@ Redmine::Application.routes.draw do
 match 'contact' => 'contact#new', :as => 'contact', :via => :get
 match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
+match 'redmine' => 'redmine#new', :as => 'redmine', :via => :get
+match 'redmine' => 'redmine#create', :as => 'redmine', :via => :post
 root to: "sections#show", :id => '29', :division_id => '5'
 
 
