@@ -7,7 +7,7 @@ class Issue < ActiveResource::Base
   self.user = 'admin'
   self.password = 'admin'
 
-attr_accessor :subject,  :priority_id, :description, :project_id
+attr_accessor :subject,  :priority_id, :description, :project_id, :nom_environnement, :type_bdd, :email
    # validates :subject, :presence => true, :length => { :minimum => 1}
     #validates :priority_id, :presence => true
     #validates :description, :presence => true

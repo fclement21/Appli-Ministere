@@ -20,9 +20,23 @@ end
 
 def create
   #stock le issue description.
-  original_description = params[:issue] && params[:issue][:description]
+  original_environnement = params[:issue] && params[:issue][:nom_environnement]
+  original_bdd = params[:issue] && params[:issue][:type_bdd]
+  original_email = params[:issue] && params[:issue][:email]
   # le modifie
-  params[:issue][:description] = "The user write #{original_description}"
+  #Titre du ticket
+  params[:issue][:subject] = "Php Creation test"
+  #Project_id :
+  params[:issue][:project_id] = "1"
+  #Description :
+  params[:issue][:description] = "
+
+   Nom d'environnement : http://#{original_environnement}.appli.i2
+
+   Type de Bdd : #{original_bdd}
+
+   Email : #{original_email} "
+
  @issue = Issue.new(params[:issue])
 
 

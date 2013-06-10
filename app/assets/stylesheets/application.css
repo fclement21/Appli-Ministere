@@ -498,6 +498,7 @@ ul li a {
 
   text-decoration: none;
   display: block;
+
 }
 .vertical{
   margin-top: 40px;
@@ -579,6 +580,43 @@ input:focus{
   margin-bottom: 30px;
 }
 
+.label-php-env{
+
+  display: block;
+  width: 180px;
+  margin-left: 270px;
+  padding-bottom: 10px;
+}
+.label-php-bdd{
+
+  display: block;
+  width: 105px;
+  margin-left: 270px;
+   padding-bottom: 10px;
+}
+.label-php-email{
+
+  display: block;
+  width: 70px;
+  margin-left: 270px;
+   padding-bottom: 10px;
+}
+.label-php-priorite{
+  display: block;
+  width: 70px;
+  margin-left: 270px;
+   padding-bottom: 10px;
+}
+
+.input-php{
+  margin-left: 270px;
+}
+.php_form{
+  margin-bottom: 30px;
+}
+.submit-php{
+  margin-left: 270px;
+}
 /*----------------------------------------------------Form---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
 .message{
