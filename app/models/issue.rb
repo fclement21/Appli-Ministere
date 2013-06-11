@@ -8,9 +8,13 @@ class Issue < ActiveResource::Base
   self.password = 'admin'
 
 attr_accessor :subject,  :priority_id, :description, :project_id, :nom_environnement, :type_bdd, :email,  :nom_redmine, :nom_admin
-   # validates :subject, :presence => true, :length => { :minimum => 1}
+
+   def validate
+   errors.add("description", "can't be empty") if description.blank?
+  end
     #validates :priority_id, :presence => true
-    #validates :description, :presence => true
+    #validates :email, :presence => true
+
 
 end
 

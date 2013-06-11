@@ -1,6 +1,9 @@
 
 <section>
   <div class="section-index">
+     <%flash.each do |key,msg| %>
+<%= content_tag(:div, content_tag(:p,msg), :class =>"message #{key}") %>
+<% end %>
 
 <h1>
   <%= @section.title %>

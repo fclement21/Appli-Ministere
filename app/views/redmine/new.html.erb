@@ -1,6 +1,9 @@
 <!-- Ce que l'utilisateur rempli et envoi -->
 <div class="section-index">
-  <h2 class="title-edit-new">Formulaire d'hébergement Php</h2>
+  <h2 class="title-edit-new">Creation d'instance Redmine</h2>
+   <%flash.each do |key,msg| %>
+<%= content_tag(:div, content_tag(:p,msg), :class =>"message #{key}") %>
+<% end %>
 <%= form_for @issue, :url => redmine_path do |form| %>
   <fieldset class="fields">
 
@@ -20,7 +23,7 @@
     <div class="php_form">
       <%= form.label :email, "Email :", :class =>'label-php-email' %>
       <div class="input-php">
-        <%= form.text_field :email %>
+        <%= form.email_field :email %>
       </div>
       </div>
      <div class="php_form">
