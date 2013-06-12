@@ -1,5 +1,8 @@
 Redmine::Application.routes.draw do
 
+  resources :php_admins
+
+
   resources :redmine_admins
 
 

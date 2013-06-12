@@ -1,0 +1,33 @@
+<%= form_for(@php_admin) do |f| %>
+  <% if @php_admin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@php_admin.errors.count, "error") %> prohibited this php_admin from being saved:</h2>
+
+      <ul>
+      <% @php_admin.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="php_form">
+  <div class="field">
+    <%= f.label :admin_title, :class =>'label-php-redmine' %>
+    <div class="input-php">
+    <%= f.text_field :admin_title %>
+  </div>
+  </div>
+</div>
+  <div class="php_form">
+  <div class="field">
+    <%= f.label :php_project, :class => 'label-php-redmine' %>
+    <div class="input-php">
+    <%= f.number_field :php_project %>
+  </div>
+</div>
+  </div>
+  <div class="actions">
+    <%= f.submit "Editer", :class => 'btn btn-primary submit-input submit-php ' %>
+  </div>
+</div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612085403) do
+ActiveRecord::Schema.define(:version => 20130612091900) do
 
   create_table "admin_form_redmines", :force => true do |t|
     t.string   "admin_title"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(:version => 20130612085403) do
   create_table "instances", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "php_admins", :force => true do |t|
+    t.string   "admin_title"
+    t.integer  "php_project"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "redmine_admins", :force => true do |t|

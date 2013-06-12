@@ -12,10 +12,13 @@ def create
   original_bdd = params[:issue] && params[:issue][:type_bdd]
   original_email = params[:issue] && params[:issue][:email]
   # le modifie
+
   #Titre du ticket
-  params[:issue][:subject] = "Creation Environnement PHP"
+  @admin_subject = PhpAdmin.find(1).admin_title
+  params[:issue][:subject] = @admin_subject
   #Project_id :
-  params[:issue][:project_id] = "1"
+  @admin_project = PhpAdmin.find(1).php_project
+  params[:issue][:project_id] = @admin_project
   #Description :
   params[:issue][:description] = "
 
