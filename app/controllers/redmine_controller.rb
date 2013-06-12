@@ -18,7 +18,8 @@ def create
   @admin_subject = RedmineAdmin.find(1).admin_title
   params[:issue][:subject] = @admin_subject
   #Project_id :
-  params[:issue][:project_id] = "1"
+  @admin_project = RedmineAdmin.find(1).numero_project
+  params[:issue][:project_id] = @admin_project
   #Description :
   params[:issue][:description] = "
 

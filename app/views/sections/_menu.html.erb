@@ -21,6 +21,9 @@
 <li class="menu menu-admin <%= 'is-active ' if current_page?(:controller => 'dashboard', :action => 'index')%> "><div class="menu-size" ><%= link_to 'Admin', dashboard_index_path%></div></li>
 <% end %>
 <% if current_user && current_user.admin? %>
+
+<li class="menu menu-admin <%#= 'is-active ' if current_page?(:controller => 'redmine_admins', :action => 'edit')%> "><div class="menu-size" ><%= link_to 'Redmine Form', edit_redmine_admin_path(1)%></div></li>
+
 <li class="menu menu-admin <%= 'is-active ' if current_page?(:controller => 'users', :action => 'index')%> "><div class="menu-size" ><%= link_to 'Users', users_index_path%></div></li>
 <% end %>
 <%if user_signed_in?  %>

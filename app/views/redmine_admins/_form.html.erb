@@ -10,12 +10,22 @@
       </ul>
     </div>
   <% end %>
-
+<div class="php_form">
   <div class="field">
-    <%= f.label :admin_title %><br />
+    <%= f.label :admin_title, :class =>'label-php-redmine' %>
+    <div class="input-php">
     <%= f.text_field :admin_title %>
   </div>
+  </div>
+  <div class="php_form">
+    <div class="field">
+          <%= f.label :numero_project, :class =>'label-php-redmine' %>
+    <div class="input-php">
+    <%= f.text_field :numero_project %>
+  </div>
+  </div>
+</div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit"Editer", :class => 'btn btn-primary submit-input submit-php ' %>
   </div>
 <% end %>

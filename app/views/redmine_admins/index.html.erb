@@ -12,6 +12,7 @@
 <% @redmine_admins.each do |redmine_admin| %>
   <tr>
     <td><%= redmine_admin.admin_title %></td>
+    <td><%= redmine_admin.numero_project %></td>
     <td><%= link_to 'Show', redmine_admin %></td>
     <td><%= link_to 'Edit', edit_redmine_admin_path(redmine_admin) %></td>
     <td><%= link_to 'Destroy', redmine_admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
