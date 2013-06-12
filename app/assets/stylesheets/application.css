@@ -197,6 +197,8 @@ tr{
 section{
   margin-top: 30px;
   margin-bottom: 100px;
+  width: 82%;
+  margin-left: 220px;
 
 
 
@@ -204,9 +206,10 @@ section{
 }
 .section-index{
 position: relative;
-left:120px;
+left:20px;
 margin-right: 30px;
-width: 87%;
+
+
 
 }
 .articlepos-right{
@@ -279,8 +282,8 @@ margin-bottom: 50px;
 }
 .section-article{
 position: relative;
-left:115px;
-width: 88%;
+left:0px;
+width: 100%;
 
 }
 
@@ -323,8 +326,8 @@ p.none{
 /*===========================================================================================================================================================================admin====================================================*/
 .section-admin{
 position: relative;
-left:142px;
-width: 87%;
+left:20px;
+width: 100%;
 }
 .button-head{
   margin-bottom: 50px;
@@ -386,28 +389,28 @@ color: #888;
 
   display: block;
   width: 70px;
-  margin-left: 265px;
+  margin-left: 275px;
 }
 .label-pass-form{
 
   display: block;
   width: 145px;
-  margin-left: 265px;
+  margin-left: 275px;
 }
 .label-conpass-form{
 
   display: block;
   width: 248px;
-  margin-left: 265px;
+  margin-left: 275px;
 }
 .label-actual-form{
 
   display: block;
   width: 145px;
-  margin-left: 272px;
+  margin-left: 282px;
 }
 .submit-edit{
-  margin-left: 283px;
+  margin-left: 293px;
   margin-top: 15px;
 }
 
@@ -494,7 +497,7 @@ li {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-ul li a {
+.menu-size a {
 
 
   text-decoration: none;

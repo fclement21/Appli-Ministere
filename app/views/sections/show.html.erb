@@ -1,5 +1,5 @@
 
-<section>
+<div>
   <div class="section-index">
      <%flash.each do |key,msg| %>
 <%= content_tag(:div, content_tag(:p,msg), :class =>"message #{key}") %>
@@ -34,4 +34,4 @@ posimg = cycle('img-index-pos-right','img-index-pos-left', :name => 'positionimg
 </article>
   <%end %>
 </div>
-</section>
+</div>
