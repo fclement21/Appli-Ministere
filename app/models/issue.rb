@@ -7,7 +7,7 @@ class Issue < ActiveResource::Base
   self.user = 'admin'
   self.password = 'admin'
 
-attr_accessor :subject,  :priority_id, :description, :project_id, :nom_environnement, :type_bdd, :email,  :nom_redmine, :nom_admin
+attr_accessor :subject,  :priority_id, :description, :project_id, :nom_environnement, :type_bdd, :email,  :nom_redmine, :nom_admin, :admin_title
 
    def validate
    errors.add("description", "can't be empty") if description.blank?

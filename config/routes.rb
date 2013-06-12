@@ -1,5 +1,8 @@
 Redmine::Application.routes.draw do
 
+  resources :redmine_admins
+
+
   get "users/index"
   put "users/:id/toggle_admin", :to => "users#toggle_admin", :as => "toggle_admin"
 
@@ -10,6 +13,11 @@ match 'creation_environnement_php' => 'contact#create', :as => 'contact', :via =
 
 match 'creation_instance_redmine' => 'redmine#new', :as => 'redmine', :via => :get
 match 'creation_instance_redmine' => 'redmine#create', :as => 'redmine', :via => :post
+
+
+#Admin form
+#match 'edit_redmine' => 'redmine#edit', :as => 'redmine', :via => :get
+#match 'edit_redmine' => 'redmine#update', :as => 'redmine', :via => :put
 
 #routes de départ
 root to: "sections#show", :id => '29', :division_id => '5'

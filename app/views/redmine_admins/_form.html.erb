@@ -1,0 +1,21 @@
+<%= form_for(@redmine_admin) do |f| %>
+  <% if @redmine_admin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@redmine_admin.errors.count, "error") %> prohibited this redmine_admin from being saved:</h2>
+
+      <ul>
+      <% @redmine_admin.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :admin_title %><br />
+    <%= f.text_field :admin_title %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,5 @@
 class RedmineController < ApplicationController
+  #before_filter :set_admin_title, :only => [:create]
 # Creating an issue
 
 def new
@@ -14,7 +15,8 @@ def create
   original_email = params[:issue] && params[:issue][:email]
   # le modifie
   #Titre du ticket
-  params[:issue][:subject] = "Creation Instance Redmine"
+  @admin_subject = RedmineAdmin.find(1).admin_title
+  params[:issue][:subject] = @admin_subject
   #Project_id :
   params[:issue][:project_id] = "1"
   #Description :
@@ -37,9 +39,6 @@ def create
     redirect_to redmine_path
        end
   end
-
-
-
 
 
 end

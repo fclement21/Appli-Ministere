@@ -6,6 +6,15 @@
 <% end %>
 <%= form_for @issue, :url => redmine_path do |form| %>
   <fieldset class="fields">
+     <!-- Only admin a mettre dans un autre form. -->
+
+  <!--    <div class="php_form">
+      <%#= form.label :admin_title, "Titre du ticket : ", :class => 'label-php-redmine' %>
+      <div class="input-php">
+   <%#= form.text_field :admin_title %>
+    </div>
+    </div>
+-->
 
      <div class="php_form">
       <%= form.label :nom_redmine, "Nom de l'instance redmine : ", :class => 'label-php-redmine' %>
