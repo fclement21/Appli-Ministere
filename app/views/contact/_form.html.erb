@@ -1,0 +1,39 @@
+<%= form_for @issue, :url => contact_path do |form| %>
+  <fieldset class="fields">
+
+     <div class="php_form">
+      <%= form.label :nom_environnement, "Nom d'environnement : ", :class => 'label-php-env' %>
+      <div class="input-php">
+      http://<%= form.text_field :nom_environnement %>.appli.i2
+    </div>
+    </div>
+ <div class="php_form">
+      <%= form.label :type_bdd, 'Type de BDD : ', :class =>'label-php-bdd'  %>
+<div class="input-php">
+      <%= form.select :type_bdd, options_for_select({ "Mysql" => "Mysql", "PostgreSQL" => "PostgreSQL"}) %>
+    </div>
+    </div>
+       <div class="php_form">
+      <%= form.label :email, 'Email : ', :class => 'label-php-email'%>
+      <div class="input-php">
+            <%= form.email_field :email %>
+          </div>
+    </div>
+
+       <div class="field">
+      <%#= form.label :description, 'Second Email' %>
+      <%#= form.text_field :description , :placeholder => 'facultatif'%>
+    </div>
+
+     <div class="php_form">
+      <%= form.label :priority_id, 'Priorité : ', :class => 'label-php-priorite' %>
+      <div class="input-php">
+      <%= form.select :priority_id, options_for_select({ "Bas" => "1", "Normal" => "2", "Haut" => "3", "Urgent" => "4", "Immediat" => "5" }, "2") %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="actions">
+    <%= form.submit "Envoyé", :class => 'btn btn-primary submit-input submit-php ' %>
+  </fieldset>
+<% end %>
