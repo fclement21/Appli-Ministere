@@ -15,10 +15,10 @@ def create
   original_email = params[:issue] && params[:issue][:email]
   # le modifie
   #Titre du ticket
-  @admin_subject = RedmineAdmin.find(1).admin_title
+  @admin_subject = Adminform.find(1).redmine_title
   params[:issue][:subject] = @admin_subject
   #Project_id :
-  @admin_project = RedmineAdmin.find(1).numero_project
+  @admin_project = Adminform.find(1).redmine_project
   params[:issue][:project_id] = @admin_project
   #Description :
   params[:issue][:description] = "

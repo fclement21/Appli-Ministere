@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  admin_title: MyString
-  php_project: 1
-
-two:
-  admin_title: MyString
-  php_project: 1

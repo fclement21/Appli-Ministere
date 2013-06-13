@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612091900) do
+ActiveRecord::Schema.define(:version => 20130613074716) do
 
   create_table "admin_form_redmines", :force => true do |t|
     t.string   "admin_title"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20130612091900) do
     t.string   "admin_title"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "adminforms", :force => true do |t|
+    t.integer  "php_project"
+    t.integer  "redmine_project"
+    t.string   "php_title"
+    t.string   "redmine_title"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "articles", :force => true do |t|

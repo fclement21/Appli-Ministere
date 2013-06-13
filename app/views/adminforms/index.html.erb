@@ -1,0 +1,29 @@
+<h1>Listing adminforms</h1>
+
+<table>
+  <tr>
+    <th>Php project</th>
+    <th>Redmine project</th>
+    <th>Php title</th>
+    <th>Redmine title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @adminforms.each do |adminform| %>
+  <tr>
+    <td><%= adminform.php_project %></td>
+    <td><%= adminform.redmine_project %></td>
+    <td><%= adminform.php_title %></td>
+    <td><%= adminform.redmine_title %></td>
+    <td><%= link_to 'Show', adminform %></td>
+    <td><%= link_to 'Edit', edit_adminform_path(adminform) %></td>
+    <td><%= link_to 'Destroy', adminform, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Adminform', new_adminform_path %>

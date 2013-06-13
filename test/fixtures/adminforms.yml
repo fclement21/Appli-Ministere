@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  php_project: 1
+  redmine_project: 1
+  php_title: MyString
+  redmine_title: MyString
+
+two:
+  php_project: 1
+  redmine_project: 1
+  php_title: MyString
+  redmine_title: MyString

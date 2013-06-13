@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Php project:</b>
+  <%= @adminform.php_project %>
+</p>
+
+<p>
+  <b>Redmine project:</b>
+  <%= @adminform.redmine_project %>
+</p>
+
+<p>
+  <b>Php title:</b>
+  <%= @adminform.php_title %>
+</p>
+
+<p>
+  <b>Redmine title:</b>
+  <%= @adminform.redmine_title %>
+</p>
+
+
+<%= link_to 'Edit', edit_adminform_path(@adminform) %> |
+<%= link_to 'Back', adminforms_path %>
