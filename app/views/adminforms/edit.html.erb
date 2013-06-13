@@ -1,4 +1,6 @@
 <h2 class="title-edit-new">Edition des formulaires</h2>
-
+ <%flash.each do |key,msg| %>
+<%= content_tag(:div, content_tag(:p,msg), :class =>"message #{key}") %>
+<% end %>
 <%= render 'form' %>
 

@@ -10,8 +10,11 @@
       </ul>
     </div>
   <% end %>
+    <fieldset>
+      <legend class="label-php-redmine">Formulaire Php</legend>
 <div class="php_form">
   <div class="field">
+
     <%= f.label :php_project, "Id du projet Php", :class => 'label-php-redmine' %>
     <div class="input-php">
     <%= f.number_field :php_project %>
@@ -27,7 +30,10 @@
   </div>
   </div>
 </div>
+</fieldset>
 
+<fieldset>
+  <legend class="label-php-redmine">Formulaire Redmine</legend>
   <div class="php_form">
   <div class="field">
     <%= f.label :redmine_project, "Id du projet Redmine",:class => 'label-php-redmine' %>
@@ -45,7 +51,9 @@
   </div>
 </div>
   </div>
+  </fieldset>
   <div class="actions">
     <%= f.submit "Editer", :class => 'btn btn-primary submit-input submit-php ' %>
   </div>
+
 <% end %>
