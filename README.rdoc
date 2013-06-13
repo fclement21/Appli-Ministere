@@ -25,6 +25,7 @@ Les admins quand a eux peuvent créer des admins et modérateurs définir les dr
 Chaque compte à une partie réservé à son profil lui permettant de changer son mot de passe ou son adresse mail.
 
 
+
 === Bilan
 
 Cette première experience professionnelle ma permit de découvrir un framework qui m'etait jusqu'a lors inconnu mais qui m'a enormement surpris. J'ai apprecié travailler sur celui-çi. Et je suis très content d'avoir pu creer une application qui va maintenant faciliter le travail des membres du centre serveur.
@@ -36,6 +37,10 @@ Je suis actuellement à la recherche d'une entreprise pouvant m'accepter en alte
 === Contact
 
 Mail : florianclement21@gmail.com
+
+
+
+
 
 
 
