@@ -614,6 +614,7 @@ input:focus{
 
 .input-php{
   margin-left: 270px;
+  width: 500px;
 }
 .php_form{
   margin-bottom: 30px;
