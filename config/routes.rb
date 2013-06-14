@@ -19,8 +19,9 @@ match 'creation_instance_redmine' => 'redmine#create', :as => 'redmine', :via =>
 #match 'edit_redmine' => 'redmine#edit', :as => 'redmine', :via => :get
 #match 'edit_redmine' => 'redmine#update', :as => 'redmine', :via => :put
 
-#routes de départ
-root to: "sections#show", :id => '29', :division_id => '5'
+#routes de départ à décommenter une fois l'appli installer , qu'une division est crée ainsi qu'une sections.
+#root to: "sections#show", :id => '1', :division_id => '1'
+root to: "division#show", :id => '1'
 
 
 

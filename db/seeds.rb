@@ -8,3 +8,4 @@
 
 Division.create(:title => "blabla")
 User.create(:email => "admin@example.net", :password => "admin123", :admin => true)
+Adminform.create(:php_project => "1",:redmine_project => "1",:php_title => "Creation Php", :redmine_title => "Redmine Creation",)
