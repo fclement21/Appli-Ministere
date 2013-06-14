@@ -2,6 +2,43 @@
 
 Cette application a été réalisé lors de mon stage de fin d'etude au Centre serveur du Ministère de l'Ecologie, du Développement durable et de l'Energie
 
+=== Comment l'installer
+
+Il vous faut avoir présent sur votre Machine rvm qui est le gestionnaire de version de ruby .
+
+Installation de git afin de pouvoir cloner le dossier.
+Une fois git installer, placer vous dans le dossier ou vous souhaitez déposer l'appli et  ecrire la commande suivante
+        git clone git@github.com:fclement21/redmine.git
+
+Une fois ça fait , installation de rails :
+
+        bundle
+
+bundle va se charger d'installer rails et les gem utilisés.
+
+Une fois l'installation des gems terminer , faire :
+
+        rake db:migrate
+puis
+        rake db:seed
+
+Le rake db:migrate va vous creer une division de base qui aura pour titre exemple, ainsi qu'un compte utilisateur qui aura pour mail admin@example.net et en password admin123 , ce compte aura tout les droits et vous permettra de creer par la suite un autre compte administrateur , des nouvelles divisions, sections, articles  et de supprimer celui existant
+
+Je vous conseil d'utiliser passenger plutot que webrick pour la mise en production la commande est la suivante
+
+        gem passenger
+
+Une fois l'install terminé pour lancer le serveur faire :
+
+        passenger start
+
+Si vous souhaitez modifier les accès aux redmines pour les formulaires et mettres les votres, il faut se rendre dans app/models/issue.rb et remplacer les lignes suivantes :
+
+        self.site = 'http://localhost:3001'
+        self.user = 'admin'
+        self.password = 'admin'
+
+
 === Temps pour effectuer cette application
 
 Cette application fut construite en 2mois comprennant 2 semaines d'apprentissage du framework, 1 semaine de design et 1 semaine d'integration en HTML/CSS puis le reste du temps fut consacré aux développement sur le framework.
